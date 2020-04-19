@@ -26,7 +26,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <clock.h>
+#include <utils.h>
 
 /**
  * @brief Default size for a matrix.
@@ -202,7 +202,7 @@ int main(int argc, char **argv)
 		end = clock_read();
 		avg += clock_diff(start, end);
 	}
-	printf("cache-unaware:      %.2lf us\n", avg/n);
+	printf("cache-unaware:      %.2lf us\n", avg/NITERATIONS);
 	
 	/* Benchmark 2. */
 	avg = 0.0;

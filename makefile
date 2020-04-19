@@ -23,47 +23,50 @@
 #
 
 # Directories.
-BINDIR = $(CURDIR)/bin
-INCDIR = $(CURDIR)/include
-SRCDIR = $(CURDIR)/src
+export BINDIR = $(CURDIR)/bin
+export INCDIR = $(CURDIR)/include
+export SRCDIR = $(CURDIR)/src
 
 # Toolchain.
 CC = gcc
 
 # Toolchain configuration
-CFLAGS = -O3
-CFLAGS += -std=c99 -fno-builtin
-CFLAGS += -pedantic -D _POSIX_C_SOURCE=200809L
-CFLAGS += -Wall -Wextra -Werror -Wa,--warn
-CFLAGS += -Winit-self -Wswitch-default -Wfloat-equal
-CFLAGS += -Wundef -Wshadow -Wuninitialized -Wlogical-op
-CFLAGS += -Wvla -Wredundant-decls
-CFLAGS += -Wno-missing-profile
-CFLAGS += -fno-stack-protector
-CFLAGS += -Wno-unused-function
-CFLAGS += -I $(INCDIR)
-
-# Executable.
-EXEC = mm
+export CFLAGS += -std=c99 -fno-builtin
+export CFLAGS += -pedantic -D _POSIX_C_SOURCE=200809L
+export CFLAGS += -Wall -Wextra -Werror -Wa,--warn
+export CFLAGS += -Winit-self -Wswitch-default -Wfloat-equal
+export CFLAGS += -Wundef -Wshadow -Wuninitialized -Wlogical-op
+export CFLAGS += -Wvla -Wredundant-decls
+export CFLAGS += -Wno-missing-profile
+export CFLAGS += -fno-stack-protector
+export CFLAGS += -Wno-unused-function
+export CFLAGS += -I $(INCDIR)
 
 # Source files.
-SRC = $(wildcard $(SRCDIR)/*.c)
+export SRC = $(wildcard $(SRCDIR)/utils/*.c)
+
+#===============================================================================
+# Top-Level Rules
+#===============================================================================
 
 # Builds executable.
-all: all-debug all-release
+all: make-dirs | all-math
+
+# Cleans build objects.
+clean: clean-math
 
 # Create directories.
 make-dirs:
 	mkdir -p $(BINDIR)
 
-# Builds release version.
-all-release: make-dirs
-	$(CC) $(CFLAGS) -D NDEBUG $(SRC) -o $(BINDIR)/$(EXEC)
+#===============================================================================
+# Math
+#===============================================================================
 
-# Builds debug version.
-all-debug: make-dirs
-	$(CC) $(CFLAGS) $(SRC) -o $(BINDIR)/$(EXEC)
+# Builds math examples.
+all-math:
+	cd $(SRCDIR)/math && $(MAKE) all
 
 # Cleans build objects.
-clean:
-	@rm -f $(BINDIR)/$(EXEC)
+clean-math:
+	cd $(SRCDIR)/,ath && $(MAKE) clean

@@ -22,12 +22,12 @@
  * SOFTWARE.
  */
 
-#ifndef CLOCK_H_
-#define CLOCK_H_
+#ifndef UTILS_H_
+#define UTILS_H_
 
 	/* Forward definitions. */
 	extern void clock_setup(void);
 	extern unsigned long clock_read(void);
 	extern unsigned long clock_diff(unsigned long t0, unsigned long t1);
 
-#endif /* CLOCK_H_ */
+#endif /* UTILS_H_ */
