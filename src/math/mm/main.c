@@ -214,7 +214,7 @@ int main(int argc, char **argv)
 		end = clock_read();
 		avg += clock_diff(start, end);
 	}
-	printf("cache-aware:        %.2lf us\n", avg/n);
+	printf("cache-aware:        %.2lf us\n", avg/NITERATIONS);
 	
 	/* Benchmark 2. */
 	avg = 0.0;
@@ -226,7 +226,7 @@ int main(int argc, char **argv)
 		end = clock_read();
 		avg += clock_diff(start, end);
 	}
-	printf("cache-obliviouse:   %.2lf us\n", avg/n);
+	printf("cache-obliviouse:   %.2lf us\n", avg/NITERATIONS);
 	
 	/* House keeping. */
 	free(a);
