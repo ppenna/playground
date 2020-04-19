@@ -178,10 +178,7 @@ int main(int argc, char **argv)
 	if (argc >= 2)
 		assert((n = atoi(argv[1])) > 0);
 
-	printf("running with %dx%d matrices...\n",
-		DEFAULT_SIZE,
-		DEFAULT_SIZE
-	);
+	printf("running with %dx%d matrices...\n", n, n);
 
 	/* Setup profiling. */
 	clock_setup();
