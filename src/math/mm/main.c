@@ -173,6 +173,9 @@ int main(int argc, char **argv)
 	double avg;
 	unsigned long start, end;
 
+	((void) argc);
+	((void) argv);
+
 	n = DEFAULT_SIZE;
 
 	if (argc >= 2)
