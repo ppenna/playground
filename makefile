@@ -70,3 +70,15 @@ all-math:
 # Cleans build objects.
 clean-math:
 	cd $(SRCDIR)/,ath && $(MAKE) clean
+
+#===============================================================================
+# Sorting
+#===============================================================================
+
+# Builds sorting examples.
+all-sorting:
+	cd $(SRCDIR)/sort && $(MAKE) all
+
+# Cleans build objects.
+clean-sorting:
+	cd $(SRCDIR)/sort && $(MAKE) clean
