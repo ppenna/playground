@@ -173,15 +173,15 @@ int main(int argc, char **argv)
 	double avg;
 	unsigned long start, end;
 
+	((void) argc);
+	((void) argv);
+
 	n = DEFAULT_SIZE;
 
 	if (argc >= 2)
 		assert((n = atoi(argv[1])) > 0);
 
-	printf("running with %dx%d matrices...\n",
-		DEFAULT_SIZE,
-		DEFAULT_SIZE
-	);
+	printf("running with %dx%d matrices...\n", n, n);
 
 	/* Setup profiling. */
 	clock_setup();
@@ -214,7 +214,7 @@ int main(int argc, char **argv)
 		end = clock_read();
 		avg += clock_diff(start, end);
 	}
-	printf("cache-aware:        %.2lf us\n", avg/n);
+	printf("cache-aware:        %.2lf us\n", avg/NITERATIONS);
 	
 	/* Benchmark 2. */
 	avg = 0.0;
@@ -226,7 +226,7 @@ int main(int argc, char **argv)
 		end = clock_read();
 		avg += clock_diff(start, end);
 	}
-	printf("cache-obliviouse:   %.2lf us\n", avg/n);
+	printf("cache-obliviouse:   %.2lf us\n", avg/NITERATIONS);
 	
 	/* House keeping. */
 	free(a);
