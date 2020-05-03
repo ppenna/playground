@@ -50,14 +50,26 @@ export SRC = $(wildcard $(SRCDIR)/utils/*.c)
 #===============================================================================
 
 # Builds executable.
-all: make-dirs | all-math
+all: make-dirs | all-math all-data
 
 # Cleans build objects.
-clean: clean-math
+clean: clean-math clean-data
 
 # Create directories.
 make-dirs:
 	mkdir -p $(BINDIR)
+
+#===============================================================================
+# Data Structures
+#===============================================================================
+
+# Builds data structure examples.
+all-data:
+	cd $(SRCDIR)/data && $(MAKE) all
+
+# Cleans build objects.
+clean-data:
+	cd $(SRCDIR)/data && $(MAKE) clean
 
 #===============================================================================
 # Math
@@ -69,7 +81,7 @@ all-math:
 
 # Cleans build objects.
 clean-math:
-	cd $(SRCDIR)/,ath && $(MAKE) clean
+	cd $(SRCDIR)/math && $(MAKE) clean
 
 #===============================================================================
 # Sorting
