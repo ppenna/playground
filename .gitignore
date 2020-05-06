@@ -2,6 +2,7 @@
 # Build Files
 bin/
 *.o
+*.class
 
 # Ctags
 tags
