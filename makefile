@@ -25,7 +25,7 @@
 # Directories.
 export BINDIR = $(CURDIR)/bin
 export INCDIR = $(CURDIR)/include
-export SRCDIR = $(CURDIR)/src
+export SRCDIR = $(CURDIR)/src/c
 
 # Toolchain.
 CC = gcc
