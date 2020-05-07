@@ -22,33 +22,20 @@
  * SOFTWARE.
  */
 
-#ifndef UTILS_H_
-#define UTILS_H_
+#include <assert.h>
+#include <stdlib.h>
+#include <stddef.h>
 
-	#include <stddef.h>
+/**
+ * The smalloc() function performs a safe memory allocation. The
+ * requested memory is either allocated or execution is terminated.
+ */
+void *smalloc(size_t n)
+{
+	void *p;
 
-	/**
-	 * @brief Setups clock.
-	 */
-	extern void clock_setup(void);
+	p = malloc(n);
+	assert(p != NULL);
 
-	/**
-	 * @brief Reads the wallclock.
-	 */
-	extern unsigned long clock_read(void);
-
-	/**
-	 * @brief Returns the different between two clocks values.
-	 */
-	extern unsigned long clock_diff(unsigned long t0, unsigned long t1);
-
-	/**
-	 * @brief Safe malloc().
-	 *
-	 * @param n Number of bytes to allocate.
-	 *
-	 * @returns A pointer to the allocated memory.
-	 */
-	extern void *smalloc(size_t n);
-
-#endif /* UTILS_H_ */
+	return (p);
+}
