@@ -42,6 +42,9 @@ export CFLAGS += -fno-stack-protector
 export CFLAGS += -Wno-unused-function
 export CFLAGS += -I $(INCDIR)
 
+# Source files.
+export SRC = $(wildcard $(SRCDIR)/utils/*.c)
+
 #===============================================================================
 # Top-Level Rules
 #===============================================================================
