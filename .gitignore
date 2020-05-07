@@ -1,0 +1,15 @@
+
+# Build Files
+bin/
+*.o
+*.class
+
+# Ctags
+tags
+
+# IDEs
+*.json
+*.swp
+*.swo
+*.clangd/
+*.vscode/
