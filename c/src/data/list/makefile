@@ -22,32 +22,25 @@
 # SOFTWARE.
 #
 
-# Builds examples
-all: all-dset all-list
+
+# Source files.
+SRC += $(wildcard $(CURDIR)/*.c)
+
+# Executable.
+EXEC = list
+
+# Builds executable.
+all: all-debug all-release
+
+# Builds release version.
+all-release:
+	$(CC) $(CFLAGS) -D NDEBUG -O3 $(SRC) -o $(BINDIR)/$(EXEC)
+
+# Builds debug version.
+all-debug:
+	$(CC) $(CFLAGS) -Og -g $(SRC) -o $(BINDIR)/$(EXEC).debug
 
 # Cleans build objects.
-clean: clean-dset clean-list
-
-#===============================================================================
-# Disjoint Set
-#===============================================================================
-
-# Builds example.
-all-dset:
-	cd dset && $(MAKE) all
-
-# Cleans build objects.
-clean-dset:
-	cd dset && $(MAKE) clean
-
-#===============================================================================
-# List
-#===============================================================================
-
-# Builds example.
-all-list:
-	cd list && $(MAKE) all
-
-# Cleans build objects.
-clean-list:
-	cd list && $(MAKE) clean
+clean:
+	@rm -f $(BINDIR)/$(EXEC)
+	@rm -f $(BINDIR)/$(EXEC).debug
