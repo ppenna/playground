@@ -50,10 +50,10 @@ export SRC = $(wildcard $(SRCDIR)/utils/*.c)
 #===============================================================================
 
 # Builds executable.
-all: make-dirs | all-math all-data
+all: make-dirs | all-math all-data all-computer-graphics
 
 # Cleans build objects.
-clean: clean-math clean-data
+clean: clean-math clean-data all-computer-graphics
 
 # Create directories.
 make-dirs:
@@ -82,3 +82,15 @@ all-math:
 # Cleans build objects.
 clean-math:
 	cd $(SRCDIR)/math && $(MAKE) clean
+
+#===============================================================================
+# Computer Graphics
+#===============================================================================
+
+# Builds computer-graphics examples.
+all-computer-graphics:
+	cd $(SRCDIR)/computer-graphics && $(MAKE) all
+
+# Cleans build objects.
+clean-computer-graphics:
+	cd $(SRCDIR)/computer-graphics && $(MAKE) clean

@@ -22,47 +22,50 @@
  * SOFTWARE.
  */
 
-#ifndef UTILS_H_
-#define UTILS_H_
+#ifndef SPHERE_H_
+#define SPHERE_H_
 
-	#include <stddef.h>
+	#include "vector.h"
 
-	/**
-	 * @brief Setups clock.
+	/*
+	 * Sphere.
 	 */
-	extern void clock_setup(void);
-
-	/**
-	 * @brief Reads the wallclock.
+	struct sphere
+	{
+		float radius;            /* Radius.         */
+		float radius2;           /* Radius^2.       */
+		float transparency;      /* Transparency.   */
+		float reflection;        /* Reflection.     */
+		struct vector surface_color;  /* Surface color.  */
+		struct vector emission_color; /* Emission color. */
+		struct vector center;         /* Center.         */
+	};
+	
+	/*
+	 * Opaque pointer to a sphere.
 	 */
-	extern unsigned long clock_read(void);
-
-	/**
-	 * @brief Returns the different between two clocks values.
+	typedef struct sphere * sphere_t;
+	
+	/*
+	 * Returns the center of a sphere.
 	 */
-	extern unsigned long clock_diff(unsigned long t0, unsigned long t1);
-
-	/**
-	 * @brief Safe malloc().
-	 *
-	 * @param n Number of bytes to allocate.
-	 *
-	 * @returns A pointer to the allocated memory.
+	extern struct vector sphere_center(sphere_t s);
+	
+	/*
+	 * Creates a sphere.
 	 */
-	extern void *smalloc(size_t n);
-
-	/**
-	 * @brief Prints an error message and exits.
-	 *
-	 * @param msg Error message.
+	extern sphere_t sphere_create
+	(struct vector c, float r, struct vector sc, float rf, float t, struct vector ec);
+	
+	/*
+	 * Destroys a sphere.
 	 */
-	extern void error(const char *msg);
-
-	/**
-	 * @brief Prints a warning message.
-	 *
-	 * @param msg Warning message.
+	extern void sphere_destroy(sphere_t s);
+	
+	/*
+	 * Asserts if a ray intercepts a sphere.
 	 */
-	extern void warning(const char *msg);
+	extern int sphere_intersects
+	(sphere_t s, struct vector rayorig, struct vector raydir, float *t0, float *t1);
 
-#endif /* UTILS_H_ */
+#endif /* SPHERE_H_ */

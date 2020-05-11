@@ -22,47 +22,24 @@
  * SOFTWARE.
  */
 
-#ifndef UTILS_H_
-#define UTILS_H_
+#include <stdio.h>
+#include <stdlib.h>
 
-	#include <stddef.h>
+/**
+ * The error() function prints the message pointed to by @p msg on the
+ * standard error file and exits.
+ */
+void error(const char *msg)
+{
+	fprintf(stderr, "error: %s\n", msg);
+	exit(EXIT_FAILURE);
+}
 
-	/**
-	 * @brief Setups clock.
-	 */
-	extern void clock_setup(void);
-
-	/**
-	 * @brief Reads the wallclock.
-	 */
-	extern unsigned long clock_read(void);
-
-	/**
-	 * @brief Returns the different between two clocks values.
-	 */
-	extern unsigned long clock_diff(unsigned long t0, unsigned long t1);
-
-	/**
-	 * @brief Safe malloc().
-	 *
-	 * @param n Number of bytes to allocate.
-	 *
-	 * @returns A pointer to the allocated memory.
-	 */
-	extern void *smalloc(size_t n);
-
-	/**
-	 * @brief Prints an error message and exits.
-	 *
-	 * @param msg Error message.
-	 */
-	extern void error(const char *msg);
-
-	/**
-	 * @brief Prints a warning message.
-	 *
-	 * @param msg Warning message.
-	 */
-	extern void warning(const char *msg);
-
-#endif /* UTILS_H_ */
+/**
+ * The warning() function prints the message pointed to by @p msg on the
+ * standard error file.
+ */
+void warning(const char *msg)
+{
+	fprintf(stderr, "warning: %s\n", msg);
+}

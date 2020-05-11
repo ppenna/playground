@@ -22,47 +22,54 @@
  * SOFTWARE.
  */
 
-#ifndef UTILS_H_
-#define UTILS_H_
+#ifndef IMAGE_H_
+#define IMAGE_H_
 
-	#include <stddef.h>
-
-	/**
-	 * @brief Setups clock.
+	/*
+	 * Pixel.
 	 */
-	extern void clock_setup(void);
+	struct pixel
+	{
+		unsigned char r; /* Red value.   */
+		unsigned char g; /* Green value. */
+		unsigned char b; /* Blue value.  */
+	};
 
-	/**
-	 * @brief Reads the wallclock.
+	/* Image file types. */
+	#define IMAGE_PPM 0 /* ppm file type. */
+
+	/*
+	 * Raw image.
 	 */
-	extern unsigned long clock_read(void);
-
-	/**
-	 * @brief Returns the different between two clocks values.
+	struct image
+	{
+		unsigned width;       /* Width (in pixels).   */
+		unsigned height;      /* Height (int pixels). */
+		unsigned dimension;   /* width*height.        */
+		struct pixel *pixels; /* Pixels.              */
+	};
+	
+	/*
+	 * Opaque pointer to a image.
 	 */
-	extern unsigned long clock_diff(unsigned long t0, unsigned long t1);
-
-	/**
-	 * @brief Safe malloc().
-	 *
-	 * @param n Number of bytes to allocate.
-	 *
-	 * @returns A pointer to the allocated memory.
+	typedef struct image * image_t;
+	
+	#define IMAGE(img, x, y) \
+		(img->pixels[(y)*img->width + (x)])
+	
+	/*
+	 * Creates an image.
 	 */
-	extern void *smalloc(size_t n);
-
-	/**
-	 * @brief Prints an error message and exits.
-	 *
-	 * @param msg Error message.
+	extern image_t image_create(unsigned width, unsigned height);
+	
+	/*
+	 * Destroys an image.
 	 */
-	extern void error(const char *msg);
-
-	/**
-	 * @brief Prints a warning message.
-	 *
-	 * @param msg Warning message.
+	extern void image_destroy(image_t img);
+	
+	/*
+	 * Exports an image to a file type.
 	 */
-	extern void warning(const char *msg);
+	extern void image_export(const char *filename, image_t img, unsigned type);
 
-#endif /* UTILS_H_ */
+#endif /* IMAGE_H_ */

@@ -22,47 +22,54 @@
  * SOFTWARE.
  */
 
-#ifndef UTILS_H_
-#define UTILS_H_
+#ifndef VECTOR_H_
+#define VECTOR_H_
 
-	#include <stddef.h>
-
-	/**
-	 * @brief Setups clock.
+	/*
+	 * 3D Vector.
 	 */
-	extern void clock_setup(void);
-
-	/**
-	 * @brief Reads the wallclock.
+	struct vector
+	{
+		float x; /* x coordinate. */
+		float y; /* y coordinate. */
+		float z; /* z coordinate. */
+	};
+	
+	extern struct vector VECTOR(float x, float y, float z);
+	
+	/*
+	 * Adds v2 to v1.
 	 */
-	extern unsigned long clock_read(void);
-
-	/**
-	 * @brief Returns the different between two clocks values.
+	extern struct vector vector_add(struct vector v1, struct vector v2);
+	
+	/*
+	 * Cross product.
 	 */
-	extern unsigned long clock_diff(unsigned long t0, unsigned long t1);
-
-	/**
-	 * @brief Safe malloc().
-	 *
-	 * @param n Number of bytes to allocate.
-	 *
-	 * @returns A pointer to the allocated memory.
+	extern struct vector vector_cross(struct vector v1, struct vector v2);
+	
+	/*
+	 * Dot product.
 	 */
-	extern void *smalloc(size_t n);
-
-	/**
-	 * @brief Prints an error message and exits.
-	 *
-	 * @param msg Error message.
+	extern float vector_dot(struct vector v1, struct vector v2);
+	
+	/*
+	 * Multiplies a 3D vector by -1.
 	 */
-	extern void error(const char *msg);
-
-	/**
-	 * @brief Prints a warning message.
-	 *
-	 * @param msg Warning message.
+	extern struct vector vector_invert(struct vector v);
+	
+	/*
+	 * Normalizes a 3D vector.
 	 */
-	extern void warning(const char *msg);
+	extern struct vector vector_normalize(struct vector v);
+	
+	/*
+	 * Scalar product.
+	 */
+	extern struct vector vector_scalar(struct vector v, float a);
+	
+	/*
+	 * Subtracts v2 from v1.
+	 */
+	extern struct vector vector_sub(struct vector v1, struct vector v2);
 
-#endif /* UTILS_H_ */
+#endif /* VECTOR_H_ */
