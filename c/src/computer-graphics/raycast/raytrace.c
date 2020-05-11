@@ -30,6 +30,7 @@
 #include "image.h"
 #include "sphere.h"
 #include "vector.h"
+#include "scene.h"
 
 #undef INFINITY
 #undef PI
@@ -38,56 +39,9 @@
 #define PI 3.141592653589793
 #define INFINITY FLT_MAX
 
-static float max(float a, float b)
-{
-	return ((a > b) ? a : b);
-}
+#define max(a, b) (((a) > (b)) ? (a) : (b))
 
-static float min(float a, float b)
-{
-	return ((a < b) ? a : b);
-}
-
-static sphere_t nearest_object(
-	struct vector raysrc,
-	struct vector raydir,
-	sphere_t *spheres,
-	int nspheres,
-	float *tnear
-)
-{
-	float t0;
-	float t1;
-	sphere_t s;
-
-	t0 = INFINITY;
-	t1 = INFINITY;
-	*tnear = INFINITY;
-	s = NULL;
-	
-	/*
-	 * Find closest sphere in the scene 
-	 * that the ray intercepts.
-	 */
-	for (int i = 0; i < nspheres; i++)
-	{
-		/* This sphere is intercepted. */
-		if (sphere_intersects(spheres[i], raysrc, raydir, &t0, &t1))
-		{
-			if (t0 < 0)
-				t0 = t1;
-			
-			/* Closest sphere found. */
-			if (t0 < *tnear)
-			{
-				*tnear = t0;
-				s = spheres[i];
-			}
-		}
-	}
-
-	return (s);
-}
+#define min(a, b) (((a) < (b)) ? (a) : (b))
 
 static struct vector compute_color(
 	sphere_t s,
@@ -96,8 +50,8 @@ static struct vector compute_color(
 	sphere_t *spheres,
 	int nspheres)
 {
-	struct vector lightdir;      /* Light direction.      */
-	struct vector surface_color; /* Color of the surface */
+	struct vector lightdir;      /* Light Direction      */
+	struct vector surface_color; /* Color of the Surface */
 
 	/* Computer color. */
 	surface_color = VECTOR(0, 0, 0);

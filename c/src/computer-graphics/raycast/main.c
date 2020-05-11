@@ -29,12 +29,20 @@
 #include "sphere.h"
 #include "vector.h"
 
+/**
+ * @brief Field View
+ */
+#define CAMERA_FOV 30
 
-#define CAMERA_FOV   30
-#define IMAGE_HEIGHT 1920
-#define IMAGE_WIDTH  1080
+/**
+ * @name Image Resolution
+ */
+/**@{*/
+#define IMAGE_HEIGHT 1920 /**< Height */
+#define IMAGE_WIDTH  1080 /**< Width  */
+/**@}*/
 
-
+/* Import definitions. */
 extern image_t render(
 	sphere_t *spheres,
 	int nspheres,
@@ -42,15 +50,14 @@ extern image_t render(
 	unsigned height,
 	float fov);
 
-/*
- * RT kernel.
+/**
+ * @brief Ray Trace Algorithm
  */
 int main(int argc, char **argv)
 {
 	/* Number of spheres. */
 	#define NR_SPHERES 6
 	
-	int i;                        /* Loop index. */
 	image_t img;                  /* Image.      */
 	sphere_t spheres[NR_SPHERES]; /* Spheres.    */
 	unsigned long end;            /* End time.   */
@@ -133,8 +140,8 @@ int main(int argc, char **argv)
 	/* Export image. */
 	image_export("out.ppm", img, IMAGE_PPM);
 	
-	/* Hous keeping. */
-	for (i = 0; i < NR_SPHERES; i++)
+	/* House keeping. */
+	for (int i = 0; i < NR_SPHERES; i++)
 		sphere_destroy(spheres[i]);
 	image_destroy(img);
 	

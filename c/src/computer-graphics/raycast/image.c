@@ -69,10 +69,9 @@ extern void image_destroy(struct image *img)
  */
 static void image_export_ppm(FILE *file, struct image *img)
 {
-	unsigned i;
-	
 	fprintf(file, "P6\n%u %u\n255\n", img->width, img->height);
-	for (i = 0; i < img->dimension; i++) {
+	for (unsigned i = 0; i < img->dimension; i++)
+	{
 		fprintf(file, "%c%c%c", 
 			img->pixels[i].r,
 			img->pixels[i].g,
@@ -93,9 +92,8 @@ void image_export(const char *filename, struct image *img, unsigned type)
 	
 	/* Open output file. */
 	file = fopen(filename, "w");
-	if (file == NULL) {
+	if (file == NULL)
 		error("cannot image_export()");
-	}
 	
 	/* Parse file type. */
 	switch (type)
