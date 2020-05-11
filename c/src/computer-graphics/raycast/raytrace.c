@@ -48,7 +48,7 @@ static float min(float a, float b)
 	return ((a < b) ? a : b);
 }
 
-sphere_t nearest_object(
+static sphere_t nearest_object(
 	struct vector raysrc,
 	struct vector raydir,
 	sphere_t *spheres,
@@ -89,7 +89,7 @@ sphere_t nearest_object(
 	return (s);
 }
 
-struct vector compute_color(
+static struct vector compute_color(
 	sphere_t s,
 	struct vector phit,
 	struct vector nhit,
@@ -160,7 +160,10 @@ struct vector raytrace(
 {
 	sphere_t s;                  /* Intersected Sphere                 */
 	float tnear;                 /* Distance to Intersected Sphere     */
+	struct vector surface_color; /* Color of the surface.              */
 	struct vector color;         /* Resulting Color                    */
+	struct vector phit;          /* Point of intersection.             */
+	struct vector nhit;          /* Normal at the intersection point.  */
 	
 	s = nearest_object(raysrc, raydir, spheres, nspheres, &tnear);
 	
@@ -170,7 +173,27 @@ struct vector raytrace(
 	if (s == NULL)
 		return (VECTOR(2, 2, 2));
 	
-	color = s->surface_color;
+	/* P = P0 + t V */
+	phit = vector_scalar(raydir, tnear);
+	phit = vector_add(phit, raysrc);
+	
+	/*
+	 * Compute normal vector at intersection point:
+	 *
+	 *     N = (P - O)/(|| P - O ||)
+	 */
+	nhit = vector_sub(phit, sphere_center(s));
+	nhit = vector_normalize(nhit);
+
+	surface_color = compute_color(
+		s,
+		phit,
+		nhit,
+		spheres,
+		nspheres
+	);
+
+	color = vector_add(surface_color, s->emission_color);
 
 	return (color);
 }
