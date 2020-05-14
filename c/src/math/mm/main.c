@@ -132,6 +132,58 @@ static void matrix_mult3(double *restrict c, const double *restrict a, const dou
 	}
 }
 
+/*============================================================================*
+ * Cache-Oblivious Matrix Multiplication                                      *
+ *============================================================================*/
+
+/**
+ * @brief Size of a cache block.
+ */
+#define BLOCK_SIZE 16
+
+/**
+ * @brief Performs a cache-oblivious matrix multiplication.
+ *
+ * @param c Resulting matrix.
+ * @param a First operand matrix.
+ * @param b Second operand matrix.
+ * @param n Matrix size.
+ */
+static void matrix_mult4(double *restrict c, const double *restrict a, const double *restrict b, int n)
+{
+	for (int bi=0; bi < n; bi += BLOCK_SIZE)
+	{
+		for (int bj=0; bj < n; bj += BLOCK_SIZE)
+		{
+			for (int bk=0; bk < n; bk += BLOCK_SIZE)
+			{
+				for (int i=0; i < BLOCK_SIZE; i++)
+				{
+					for (int j=0; j < BLOCK_SIZE; j++)
+					{
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 0)*MATRIX(b, bk + 0, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 1)*MATRIX(b, bk + 1, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 2)*MATRIX(b, bk + 2, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 3)*MATRIX(b, bk + 3, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 4)*MATRIX(b, bk + 4, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 5)*MATRIX(b, bk + 5, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 6)*MATRIX(b, bk + 6, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 7)*MATRIX(b, bk + 7, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 8)*MATRIX(b, bk + 8, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 9)*MATRIX(b, bk + 9, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 10)*MATRIX(b, bk + 10, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 11)*MATRIX(b, bk + 11, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 12)*MATRIX(b, bk + 12, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 13)*MATRIX(b, bk + 13, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 14)*MATRIX(b, bk + 14, bj + j);
+							MATRIX(c, bi + i, bj + j) += MATRIX(a, bi + i, bk + 15)*MATRIX(b, bk + 15, bj + j);
+					}
+				}
+			}
+		}
+	}
+}
+
 /*============================================================================*/
 
 /**
@@ -226,8 +278,20 @@ int main(int argc, char **argv)
 		end = clock_read();
 		avg += clock_diff(start, end);
 	}
-	printf("cache-obliviouse:   %.2lf us\n", avg/NITERATIONS);
-	
+	printf("cache-oblivious:   %.2lf us\n", avg/NITERATIONS);
+
+	/* Benchmark 2. */
+	avg = 0.0;
+	matrix_mult2(c3, a, b, n);
+	for (int it = 0; it < NITERATIONS; it++)
+	{
+		start = clock_read();
+		matrix_mult4(c3, a, b, n);
+		end = clock_read();
+		avg += clock_diff(start, end);
+	}
+	printf("cache-oblivious unroll:   %.2lf us\n", avg/NITERATIONS);
+
 	/* House keeping. */
 	free(a);
 	free(b);
