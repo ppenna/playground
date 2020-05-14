@@ -44,7 +44,7 @@
 #define MATRIX(m, i, j) m[(i)*n + (j)]
 
 /*============================================================================*
- * Cache-Unware Matrix Multiplication                                                                    *
+ * Cache-Unware Matrix Multiplication                                         *
  *============================================================================*/
 
 /**
@@ -68,7 +68,7 @@ static void matrix_mult1(double *restrict c, const double *restrict a, const dou
 }
 
 /*============================================================================*
- * Cache-Aware Matrix Multiplication                                                                    *
+ * Cache-Aware Matrix Multiplication                                          *
  *============================================================================*/
 
 /**
@@ -144,7 +144,7 @@ static double *matrix_create(int n)
 	double *m;
 
 	m = malloc(n*n*sizeof(double));
-	assert(m != NULL); 
+	assert(m != NULL);
 
 	memset(m, 0, n*n*sizeof(double));
 
@@ -191,7 +191,7 @@ int main(int argc, char **argv)
 	c1 = matrix_create(n); matrix_init(c1, n);
 	c2 = matrix_create(n); matrix_init(c2, n);
 	c3 = matrix_create(n); matrix_init(c3, n);
-	
+
 	/* Benchmark 1. */
 	avg = 0.0;
 	matrix_mult1(c1, a, b, n);
@@ -203,7 +203,7 @@ int main(int argc, char **argv)
 		avg += clock_diff(start, end);
 	}
 	printf("cache-unaware:      %.2lf us\n", avg/NITERATIONS);
-	
+
 	/* Benchmark 2. */
 	avg = 0.0;
 	matrix_mult2(c2, a, b, n);
@@ -215,7 +215,7 @@ int main(int argc, char **argv)
 		avg += clock_diff(start, end);
 	}
 	printf("cache-aware:        %.2lf us\n", avg/NITERATIONS);
-	
+
 	/* Benchmark 2. */
 	avg = 0.0;
 	matrix_mult2(c3, a, b, n);
