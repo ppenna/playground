@@ -1,0 +1,9 @@
+# Build Files
+*.o
+*.class
+
+# IDEs
+*.swp
+*.swo
+*.clangd/
+*.vscode/
