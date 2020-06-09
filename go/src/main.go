@@ -22,6 +22,7 @@ import (
 	"data/list"
 	"data/queue"
 	"data/stack"
+	"sorting"
 )
 
 // Tests stack implementation.
@@ -30,4 +31,5 @@ func main() {
 	list.Test()
 	stack.Test()
 	queue.Test()
+	sorting.Test()
 }

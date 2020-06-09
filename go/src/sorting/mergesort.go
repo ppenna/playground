@@ -15,14 +15,7 @@
  * with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package main
-
-import (
-	"fmt"
-)
-
-// Length of Array
-const arrayLength = 32
+package sorting
 
 // Sorts an array.
 func mergesort(array []int) {
@@ -70,23 +63,4 @@ func mergesort(array []int) {
 	}
 
 	sort(0, len(array))
-}
-
-// Tests the Mergesort algorithm.
-func main() {
-	var array []int
-
-	array = make([]int, arrayLength)
-
-	// Build the input array.
-	for i := 0; i < arrayLength; i += 2 {
-		array[i] = arrayLength - i
-		array[i+1] = i + 1
-	}
-
-	fmt.Println(array)
-
-	mergesort(array)
-
-	fmt.Println(array)
 }

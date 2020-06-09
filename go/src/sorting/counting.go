@@ -17,13 +17,6 @@
 
 package sorting
 
-import (
-	"fmt"
-)
-
-// Length of Array
-const arrayLength = 32
-
 // Maximum Number for an Integer
 const maxInt = int(^uint(0) >> 1)
 const minInt = -maxInt - 1
@@ -71,23 +64,4 @@ func countingSort(array []int) {
 			k++
 		}
 	}
-}
-
-// Tests the Counting Sort algorithm.
-func Test() {
-	var array []int
-
-	array = make([]int, arrayLength)
-
-	// Build the input array.
-	for i := 0; i < arrayLength; i += 2 {
-		array[i] = arrayLength - i
-		array[i+1] = i + 1
-	}
-
-	fmt.Println(array)
-
-	countingSort(array)
-
-	fmt.Println(array)
 }

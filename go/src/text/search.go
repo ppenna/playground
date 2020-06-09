@@ -15,7 +15,7 @@
  * with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package main
+package text
 
 import (
 	"fmt"
@@ -62,7 +62,7 @@ func BMHSearch(text, pattern string) int {
 }
 
 // Tests the BHM Search algorithm.
-func main() {
+func Test() {
 	text := "hello world"
 	pattern := "world"
 

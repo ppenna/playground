@@ -17,24 +17,10 @@
 
 package sorting
 
-import (
-	"fmt"
-)
-
-// Length of Array
-const arrayLength = 32
-
 // Heap
 type Heap struct {
 	array  []int
 	length int
-}
-
-// Swaps two elements in an array.
-func swap(array []int, i, j int) {
-	tmp := array[i]
-	array[i] = array[j]
-	array[j] = tmp
 }
 
 // Initializes a binary heap.
@@ -127,23 +113,4 @@ func Heapsort(a []int) {
 	for i := 0; i < len(a); i++ {
 		a[i] = heap.Remove()
 	}
-}
-
-// Tests the Heapsort algorithm.
-func Test() {
-	var array []int
-
-	array = make([]int, arrayLength)
-
-	// Build the input array.
-	for i := 0; i < arrayLength; i += 2 {
-		array[i] = arrayLength - i
-		array[i+1] = i + 1
-	}
-
-	fmt.Println(array)
-
-	Heapsort(array)
-
-	fmt.Println(array)
 }

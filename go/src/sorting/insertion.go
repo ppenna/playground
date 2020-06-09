@@ -15,21 +15,7 @@
  * with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package main
-
-import (
-	"fmt"
-)
-
-// Length of Array
-const arrayLength = 32
-
-// Swaps two elements in an array.
-func swap(a []int, i, j int) {
-	tmp := a[i]
-	a[i] = a[j]
-	a[j] = tmp
-}
+package sorting
 
 // Sorts an array.
 func insertionSort(array []int) {
@@ -41,22 +27,4 @@ func insertionSort(array []int) {
 			}
 		}
 	}
-}
-
-// Tests the Insertion Sort algorithm.
-func main() {
-
-	array := make([]int, arrayLength)
-
-	// Build the input array.
-	for i := 0; i < arrayLength; i += 2 {
-		array[i] = arrayLength - i
-		array[i+1] = i + 1
-	}
-
-	fmt.Println(array)
-
-	insertionSort(array)
-
-	fmt.Println(array)
 }
