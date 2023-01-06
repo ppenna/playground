@@ -1,0 +1,10 @@
+# Copyright (C) 2023 Pedro Henrique Penna <pedrohenriquepenna@outlook.com>
+
+# IDEs
+.vscode/
+
+# Build Artifacts
+*.elf
+
+# Directories
+bin/
