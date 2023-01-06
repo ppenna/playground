@@ -64,7 +64,7 @@ um ambiente de produção não é recomendado.
 
 ### Ordenação
 
-- `B` Ordenação por Bolha
+- `B` [Ordenação por Bolha (_Bubble Sort_)](sorting/bubble-sort/README.pt-br.md)
 - `B` Ordenação por Seleção
 - `B` Ordenação por Seleção
 - `B` Ordenação de Shell
