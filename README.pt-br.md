@@ -69,7 +69,7 @@ um ambiente de produção não é recomendado.
 - `B` Ordenação por Seleção
 - `B` Ordenação de Shell
 - `B` Mergesort
-- `I` Quicksort
+- `I` [Quicksort](sorting/quicksort/README.pt-br.md)
 - `I` Heapsort
 - `I` Ordenação por Contagem
 
