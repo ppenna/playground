@@ -71,7 +71,7 @@ um ambiente de produção não é recomendado.
 - `B` Mergesort
 - `I` [Quicksort](sorting/quicksort/README.pt-br.md)
 - `I` Heapsort
-- `I` Ordenação por Contagem
+- `I` [Ordenação por Contagem (_Counting Sort_)](sorting/bubble-sort/README.pt-br.md)
 
 ### Busca
 

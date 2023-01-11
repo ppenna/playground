@@ -71,7 +71,7 @@ a production environment.
 - `B` Merge Sort
 - `I` [Quicksort](sorting/quicksort/README.md)
 - `I` Heap Sort
-- `I` Counting Sort
+- `I` [Counting Sort](sorting/counting-sort/README.md)
 
 ### Searching
 
