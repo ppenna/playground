@@ -56,6 +56,17 @@ static void initialize_array(type_t array[], size_t length)
     }
 }
 
+// Checks if an array is sorted.
+static bool is_sorted(const type_t array[], size_t length)
+{
+    for (size_t i = 1; i < length; i++) {
+        if (array[i] < array[i - 1]) {
+            return (false);
+        }
+    }
+    return (true);
+}
+
 // Tests Bubble Sort.
 static void test(size_t length, bool verbose)
 {
@@ -90,6 +101,9 @@ static void test(size_t length, bool verbose)
         printf("Output: ");
         print_array(array, length);
     }
+
+    // Check if array is sorted.
+    assert(is_sorted(array, length));
 
     // Release array.
     free(array);
