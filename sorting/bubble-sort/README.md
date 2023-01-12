@@ -27,7 +27,6 @@ the study of other sorting algorithms.
 If that is the case, go back to Step 1.
 5. The array is sorted.
 
-
 ## Further Reading
 
 - [Desenvolvendo Software](http://desenvolvendosoftware.com.br/algoritmos/ordenacao/bubble-sort.html) (Portuguese)
