@@ -12,11 +12,11 @@
 typedef int type_t;
 
 // Swaps two elements in an array.
-static void swap(type_t array[], size_t i, size_t j)
+static void swap(type_t *x, type_t *y)
 {
-    type_t tmp = array[i];
-    array[i] = array[j];
-    array[j] = tmp;
+    type_t tmp = *x;
+    *x = *y;
+    *y = tmp;
 }
 
 // Sorts an array using Bubble Sort.
@@ -32,7 +32,7 @@ static void bubble_sort(type_t array[], size_t length)
         for (size_t i = 1; i < length; i++) {
             if (array[i - 1] > array[i]) {
                 changed = true;
-                swap(array, i - 1, i);
+                swap(&array[i - 1], &array[i]);
             }
         }
     } while (changed);
