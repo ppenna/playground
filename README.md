@@ -65,7 +65,7 @@ a production environment.
 ### Sorting
 
 - `B` [Bubble Sort](sorting/bubble-sort/README.md)
-- `B` Selection Sort
+- `B` [Selection Sort](sorting/selection-sort/README.md)
 - `B` Insertion Sort
 - `B` Shell Sort
 - `B` Merge Sort
