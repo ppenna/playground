@@ -13,5 +13,6 @@ members = [
     "sorting/counting-sort/rust",
     "sorting/insertion-sort/rust",
     "sorting/selection-sort/rust",
+    "sorting/shell-sort/rust",
     "sorting/quicksort/rust",
 ]
