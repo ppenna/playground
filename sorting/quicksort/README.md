@@ -13,7 +13,7 @@ algorithms such as Merge Sort and Heapsort.
 
 ## Performance
 
-- Best-Case:  $O(n \log_2 n)$ comparisons
+- Best-Case: $O(n \log_2 n)$ comparisons
 - Worst-Case: $O(n^2)$ comparisons
 
 ## Algorithm
