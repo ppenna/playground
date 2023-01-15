@@ -66,7 +66,7 @@ um ambiente de produção não é recomendado.
 
 - `B` [Ordenação por Bolha (_Bubble Sort_)](sorting/bubble-sort/README.pt-br.md)
 - `B` Ordenação por Seleção
-- `B` Ordenação por Seleção
+- `B` Ordenação por Inserção
 - `B` Ordenação de Shell
 - `B` Mergesort
 - `I` [Quicksort](sorting/quicksort/README.pt-br.md)
