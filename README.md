@@ -75,7 +75,7 @@ a production environment.
 
 ### Searching
 
-- `B` Linear Search
+- `B` [Linear Search](searching/linear-search/README.md)
 - `B` Binary Search
 
 ### Strings

@@ -3,6 +3,7 @@
 [workspace]
 members = [
     "data-structures/vector/rust",
+    "searching/linear-search/rust",
     "sorting/bubble-sort/rust",
     "sorting/counting-sort/rust",
     "sorting/insertion-sort/rust",
