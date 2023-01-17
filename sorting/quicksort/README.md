@@ -29,4 +29,5 @@ placed on either of the partitions.
 
 ## Further Reading
 
+- [Desenvolvendo Software](http://desenvolvendosoftware.com.br/algoritmos/ordenacao/quicksort.html) (Portuguese)
 - [Wikipedia](https://en.wikipedia.org/wiki/Quicksort)

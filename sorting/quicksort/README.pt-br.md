@@ -30,4 +30,4 @@ forem iguais ao _pivô_ podem ser colocados em quaisquer uma das partições.
 ## Leitura Complementar
 
 - [Desenvolvendo Software](http://desenvolvendosoftware.com.br/algoritmos/ordenacao/quicksort.html)
-- [Wikipedia](https://pt.wikipedia.org/wiki/Quicksort)
+- [Wikipédia](https://pt.wikipedia.org/wiki/Quicksort)
