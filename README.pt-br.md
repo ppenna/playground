@@ -76,7 +76,7 @@ um ambiente de produção não é recomendado.
 ### Busca
 
 - `B` [Busca Linear](searching/linear-search/README.pt-br.md)
-- `B` Busca Binária
+- `B` [Busca Binária](searching/binary-search/README.pt-br.md)
 
 ### Strings
 
