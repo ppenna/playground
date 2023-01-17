@@ -11,11 +11,6 @@ reordenando recursivamente um arranjo de acordo com um elemento _pivô_.
 O _Quicksort_ apresenta um desempenho marginalmente superior a outros algoritmos
 de ordenação por comparação, como o _Merge Sort_ e o _Heap Sort_.
 
-## Desempenho
-
-- Melhor Caso: $O(n \log_2 n)$ comparações
-- Pior Caso: $O(n^2)$ comparações
-
 ## Algoritmo
 
 1. Caso o arranjo tiver menos que dois elementos, pare a recursão.
@@ -26,6 +21,11 @@ elementos maiores que o _pivô_ fiquem depois do ponto de divisão. Elementos qu
 forem iguais ao _pivô_ podem ser colocados em quaisquer uma das partições.
 4. Recursivamente aplique os Passos 1 -- 3 nos sub-arranjos da esquerda e direita.
 5. Quando a recursão parar, o arranjo está ordenado.
+
+## Desempenho
+
+- Melhor Caso: $O(n \log_2 n)$ comparações
+- Pior Caso: $O(n^2)$ comparações
 
 ## Leitura Complementar
 

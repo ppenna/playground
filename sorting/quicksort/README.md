@@ -11,11 +11,6 @@ partitioning and reordering the input array according to a _pivot_ element.
 Quicksort presents a slightly better performance than other comparison sort
 algorithms such as Merge Sort and Heapsort.
 
-## Performance
-
-- Best-Case: $O(n \log_2 n)$ comparisons
-- Worst-Case: $O(n^2)$ comparisons
-
 ## Algorithm
 
 1. If the array is shorter than two elements, stop recursing.
@@ -26,6 +21,11 @@ greater than the _pivot_ come after it. Elements that equal the _pivot_ can be
 placed on either of the partitions.
 4. Recursively apply Steps 1 -- 3 in the the left and right sub-arrays.
 5. When the recursion ends, the array is sorted.
+
+## Performance
+
+- Best-Case: $O(n \log_2 n)$ comparisons
+- Worst-Case: $O(n^2)$ comparisons
 
 ## Further Reading
 
