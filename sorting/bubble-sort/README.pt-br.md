@@ -31,4 +31,4 @@ posição. Em caso afirmativo, volte ao Passo 1.
 ## Leitura Complementar
 
 - [Desenvolvendo Software](http://desenvolvendosoftware.com.br/algoritmos/ordenacao/bubble-sort.html)
-- [Wikipedia](https://pt.wikipedia.org/wiki/Bubble_sort)
+- [Wikipédia](https://pt.wikipedia.org/wiki/Bubble_sort)
