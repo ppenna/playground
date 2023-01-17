@@ -13,11 +13,6 @@ Bubble Sort presents a poor performance, when compared to other sorting
 algorithms. Still, it is simple to understand and thus it is often used to motivate
 the study of other sorting algorithms.
 
-## Performance
-
-- Best-Case: $O(n^2)$ comparisons, $O(1)$ swaps
-- Worst-Case: $O(n^2)$ comparisons, $O(n^2)$ swaps
-
 ## Algorithm
 
 1. Traverse the input array, from the begin towards the end.
@@ -26,6 +21,11 @@ the study of other sorting algorithms.
 4. When done traversing the array, check if any pair of elements were swapped.
 If that is the case, go back to Step 1.
 5. The array is sorted.
+
+## Performance
+
+- Best-Case: $O(n^2)$ comparisons, $O(1)$ swaps
+- Worst-Case: $O(n^2)$ comparisons, $O(n^2)$ swaps
 
 ## Further Reading
 

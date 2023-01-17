@@ -13,11 +13,6 @@ O _Bubble Sort_ apresenta um desempenho ruim, quando comparado à outros
 algoritmos de ordenação. No entanto, por ser de simples compreensão, é
 frequentemente usado para motivar o estudo de outros algoritmos de ordenação.
 
-## Desempenho
-
-- Melhor Caso: $O(n^2)$ comparações, $O(1)$ trocas
-- Pior Caso: $O(n^2)$ comparações, $O(n^2)$ trocas
-
 ## Algoritmo
 
 1. Percorra a o arranjo de entrada, do início ao fim.
@@ -27,6 +22,11 @@ arranjo é menor.
 4. Ao terminar de percorrer o arranjo, verifique se algum elemento trocou de
 posição. Em caso afirmativo, volte ao Passo 1.
 5. O arranjo está ordenado.
+
+## Desempenho
+
+- Melhor Caso: $O(n^2)$ comparações, $O(1)$ trocas
+- Pior Caso: $O(n^2)$ comparações, $O(n^2)$ trocas
 
 ## Leitura Complementar
 
