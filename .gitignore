@@ -5,6 +5,8 @@
 
 # Build Artifacts
 *.elf
+*.lock
+target/
 
 # Directories
 bin/
