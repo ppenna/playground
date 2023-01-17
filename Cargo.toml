@@ -1,0 +1,6 @@
+# Copyright (C) 2023 Pedro Henrique Penna <pedrohenriquepenna@outlook.com>
+
+[workspace]
+members = [
+    "sorting/bubble-sort/rust",
+]
