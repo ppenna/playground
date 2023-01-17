@@ -75,8 +75,8 @@ static void test(size_t length, bool verbose)
     type_t *array = NULL;
     const double MICROSECS = ((CLOCKS_PER_SEC / 1000000.0));
 
-    // Fix random number generator seed
-    // to have a determinist behavior across runs.
+    // Fix random number generator seed so that we have
+    // a deterministic behavior across runs.
     srand(0);
 
     // Allocate an initialize array.
