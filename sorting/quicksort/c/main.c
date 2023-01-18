@@ -19,34 +19,31 @@ static void swap(type_t *x, type_t *y)
     *y = tmp;
 }
 
-// Finds a quicksort partition.
+// Finds a Quicksort partition.
 static size_t partition(type_t array[], size_t left, size_t right)
 {
-    size_t i = left;
-    size_t j = right + 1;
+    size_t i = left + 1;
+    size_t j = right;
     type_t mid = left + (right - left) / 2;
-    type_t pivot = array[mid];
 
     // Make the pivot element a sentinel.
     swap(&array[left], &array[mid]);
 
     // Find partition and swap elements that are out of order.
     while (true) {
-        // Skip elements that are smaller than the pivot.
-        while (array[++i] < pivot) {
-            if (i == right) {
-                break;
-            }
+        // Skip elements that are smaller than *or* equal the pivot.
+        while ((i < right) && (array[i] <= array[left])) {
+            i += 1;
         }
 
-        // Skip elements that are greater than the pivot.
-        while (array[--j] > pivot) {
-            if (j == left) {
-                break;
-            }
+        // Skip elements that are *only* greater than the pivot.
+        // Note that we don't need to perform a bound check here, because
+        // At the leftmost position we placed the pivot element as sentinel.
+        while (array[j] > array[left]) {
+            j -= 1;
         }
 
-        // Found partition.
+        // Partition found.
         if (i >= j) {
             break;
         }
