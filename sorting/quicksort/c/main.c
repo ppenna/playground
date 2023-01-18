@@ -61,13 +61,19 @@ static size_t partition(type_t array[], size_t left, size_t right)
     return (j);
 }
 
-// Internal Quicksort routine.
-static void _quicksort(type_t array[], int left, int right)
+// Recursive Quicksort routine.
+static void _quicksort(type_t array[], size_t left, size_t right)
 {
     if (right > left) {
-        size_t j = partition(array, left, right);
-        _quicksort(array, left, j - 1);
-        _quicksort(array, j + 1, right);
+        size_t p = partition(array, left, right);
+
+        // Overflow protection: recurse only if there is a left-hand partition.
+        if (p > 0) {
+            _quicksort(array, left, p - 1);
+        }
+
+        // There is always a right-hand partition.
+        _quicksort(array, p + 1, right);
     }
 }
 
