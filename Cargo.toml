@@ -3,4 +3,5 @@
 [workspace]
 members = [
     "sorting/bubble-sort/rust",
+    "sorting/quicksort/rust",
 ]
