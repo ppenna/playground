@@ -41,7 +41,7 @@ um ambiente de produção não é recomendado.
 
 ### Estruturas de Dados Lineares
 
-- `B` Vetores
+- `B` [Vetores](data-structures/vector/README.pt-br.md)
 - `B` Listas Encadeadas
 - `B` Pilhas
 - `B` Filas
