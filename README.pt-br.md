@@ -43,7 +43,7 @@ um ambiente de produção não é recomendado.
 
 - `B` [Vetores](data-structures/vector/README.pt-br.md)
 - `B` Listas Encadeadas
-- `B` Pilhas
+- `B` [Pilhas](data-structures/stack/README.pt-br.md)
 - `B` Filas
 - `I` Filas de Prioridade
 - `I` Conjuntos Disjuntos

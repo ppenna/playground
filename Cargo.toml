@@ -2,6 +2,7 @@
 
 [workspace]
 members = [
+    "data-structures/stack/rust",
     "data-structures/vector/rust",
     "searching/binary-search/rust",
     "searching/interpolation-search/rust",
