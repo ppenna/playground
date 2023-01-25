@@ -6,7 +6,7 @@ _Leia isso em outros idiomas: [English](README.md), [Português](README.pt-br.md
 
 - [O que é a Busca por Interpolação?](#o-que-é-a-busca-por-interpolação)
 - [Quando usar a Busca por Interpolação?](#quando-usar-a-busca-por-interpolação)
-- [Quais as características da Busca por Interpolação?](#quais-as-características-da-busca-por-interpolação)
+- [Quais são as características da Busca por Interpolação?](#quais-são-as-características-da-busca-por-interpolação)
 - [Qual o algoritmo da Busca por Interpolação?](#qual-o-algoritmo-da-busca-por-interpolação)
 - [Qual o desempenho da Busca por Interpolação?](#qual-o-desempenho-da-busca-por-interpolação)
 
@@ -18,7 +18,7 @@ A Busca por Interpolação (_Interpolation Search_) é um algoritmo de busca cri
 
 - A Busca por Interpolação é indicada quando sabe-se que existe uma distribuição uniforme dos elementos no arranjo de busca. Nesse caso, o desempenho médio do algoritmo é de `O(log₂ (log₂ n))` onde `n` é o comprimento do arranjo de busca.
 
-## Quais as características da Busca por Interpolação?
+## Quais são as características da Busca por Interpolação?
 
 - A Busca por Interpolação é uma variação da Busca Binária.
 - A Busca por Interpolação funciona apenas em arranjos ordenados.
