@@ -5,7 +5,7 @@
 _Leia isso em outros idiomas: [English](README.md), [Português](README.pt-br.md)_
 
 - [O quê é a Busca Sequencial?](#o-quê-é-a-busca-sequencial)
-- [Quais são as propriedades da Busca Sequencial?](#quais-são-as-propriedades-da-busca-sequencial)
+- [Quais são as características da Busca Sequencial?](#quais-são-as-características-da-busca-sequencial)
 - [Qual é o algoritmo da Busca Sequencial?](#qual-é-o-algoritmo-da-busca-sequencial)
 - [Qual o desempenho da Busca Sequencial?](#qual-o-desempenho-da-busca-sequencial)
 - [Leitura Complementar](#leitura-complementar)
@@ -14,7 +14,7 @@ _Leia isso em outros idiomas: [English](README.md), [Português](README.pt-br.md
 
 A Busca Sequencial (_Sequential Search_) ou Busca Linear (_Linear Search_) é um algoritmo de busca que encontra um elemento específico em uma lista ou arranjo, iterando por um elemento de cada vez e verificando se aquele elemento é o do elemento procurado.
 
-## Quais são as propriedades da Busca Sequencial?
+## Quais são as características da Busca Sequencial?
 
 - A Busca Sequencial funciona em listas e arranjos.
 - A Busca Sequencial funciona em dados não ordenados.
