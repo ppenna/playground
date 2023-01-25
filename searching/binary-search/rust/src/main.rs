@@ -14,7 +14,7 @@ fn binary_search<T: PartialOrd>(array: &[T], x: &T) -> usize {
     let mut high: usize = array.len();
 
     while low < high {
-        let mid: usize = low + (high - low) / 2 - 1;
+        let mid: usize = low + (high - low) / 2;
 
         // Found.
         if &array[mid] == x {
@@ -53,6 +53,7 @@ fn test(length: usize, verbose: bool) {
     // Allocate and initialize array.
     let mut array: Vec<usize> = Vec::<usize>::with_capacity(length);
     init_array(&mut array, &mut rng, range);
+    array.sort();
 
     let key: &usize = &array[(rng.sample(&range))];
 
