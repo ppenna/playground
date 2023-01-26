@@ -5,6 +5,7 @@ use std::{
     alloc::{self, Layout},
     env::args,
     fmt::Debug,
+    mem,
     ops::{Index, IndexMut},
     ptr, slice,
     time::Instant,
@@ -61,8 +62,9 @@ impl<T: Copy> Vector<T> {
             }
         };
         self.ptr = {
+            let new_size: usize = self.capacity * mem::size_of::<T>();
             let ptr: *mut u8 =
-                unsafe { alloc::realloc(self.ptr.as_ptr() as *mut u8, layout, self.capacity) };
+                unsafe { alloc::realloc(self.ptr.as_ptr() as *mut u8, layout, new_size) };
             match ptr::NonNull::new(ptr as *mut T) {
                 Some(p) => p,
                 None => alloc::handle_alloc_error(layout),
