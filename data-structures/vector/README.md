@@ -4,21 +4,16 @@
 
 _Read this in other languages: [English](README.md), [Português](README.pt-br.md)_
 
-- [What are vectors?](#what-are-vectors)
+- [What is a vector?](#what-is-a-vector)
 - [Where are vectores used?](#where-are-vectores-used)
 - [How to implement a vector?](#how-to-implement-a-vector)
 - [What are the basic operations in a vector?](#what-are-the-basic-operations-in-a-vector)
 
-## What are vectors?
+## What is a vector?
 
-A vector is a linear data structure that efficiently supports random access to
-any of its elements. To do this, the elements of a vector must all have the same
-type and be stored contiguously in memory. Thus, an element can be uniquely
-indexed from its relative position in this data structure.
+A vector is a linear data structure that efficiently supports random access to any of its elements. To do this, the elements of a vector must all have the same type and be stored contiguously in memory. Thus, an element can be uniquely indexed from its relative position in this data structure.
 
-An analogy for vectors are staircases. Several steps of the same size are
-arranged contiguously and a step can be uniquely identified by its relative
-position to the first step of the staircase.
+An analogy for vectors are staircases. Several steps of the same size are arranged contiguously and a step can be uniquely identified by its relative position to the first step of the staircase.
 
 ## Where are vectores used?
 

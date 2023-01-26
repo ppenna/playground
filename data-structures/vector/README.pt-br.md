@@ -1,25 +1,19 @@
-# Vector
+# Vetor
 
 [![en](https://img.shields.io/badge/lang-en-red.svg)](./README.md) [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](README.pt-br.md)
 
 _Leia isso em outros idiomas: [English](README.md), [Português](README.pt-br.md)_
 
-- [O quê são vetores?](#o-quê-são-vetores)
+- [O quê é um vetor?](#o-quê-é-um-vetor)
 - [Onde vetores são usados?](#onde-vetores-são-usados)
 - [Qual é a estrutura de um vetor?](#qual-é-a-estrutura-de-um-vetor)
 - [Quais são as operações básicas de um vetor?](#quais-são-as-operações-básicas-de-um-vetor)
 
-## O quê são vetores?
+## O quê é um vetor?
 
-Um vetor é uma estrutura de dados linear que suporta de forma eficiente o acesso
-aleatório a qualquer um de seus elementos. Para isso, os elementos de um vetor
-devem todos possuir o mesmo tipo e serem armazenados de forma contígua em
-memória. Assim, um elemento pode ser unicamente indexado a partir de sua posição
-relativa nessa estrutura de dados.
+Um vetor é uma estrutura de dados linear que suporta de forma eficiente o acesso aleatório a qualquer um de seus elementos. Para isso, os elementos de um vetor devem todos possuir o mesmo tipo e serem armazenados de forma contígua em memória. Assim, um elemento pode ser unicamente indexado a partir de sua posição relativa nessa estrutura de dados.
 
-Uma analogia para vetores são as escadas. Vários degraus de mesmo tamanho são
-dispostos contiguamente e um degrau pode ser unicamente identificado pela sua
-posição relativa ao primeiro degrau da escada.
+Uma analogia para vetores são as escadas. Vários degraus de mesmo tamanho são dispostos contiguamente e um degrau pode ser unicamente identificado pela sua posição relativa ao primeiro degrau da escada.
 
 ## Onde vetores são usados?
 
