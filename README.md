@@ -44,7 +44,7 @@ a production environment.
 - `B` [Vectors](data-structures/vector/README.md)
 - `B` Linked Lists
 - `B` [Stacks](data-structures/stack/README.md)
-- `B` Queues
+- `B` [Queues](data-structures/queue/README.md)
 - `I` Priority Queues
 - `I` Disjoint Sets
 
