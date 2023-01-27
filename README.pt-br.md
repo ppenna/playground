@@ -84,7 +84,7 @@ um ambiente de produção não é recomendado.
 
 - `A` Distância de Hamming
 - `B` [Algoritmo Força-Bruta](string/search/brute-force/README.pt-br.md)
-- `I` Algoritmo de Knuth-Morris-Pratt
+- `I` [Algoritmo de Knuth-Morris-Pratt](string/search/kmp/README.pt-br.md)
 - `I` Algoritmo de Rabin-Karp
 - `I` Algoritmo de Boyer-Moore
 
