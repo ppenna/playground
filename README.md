@@ -83,6 +83,7 @@ a production environment.
 ### Strings
 
 - `A` Hamming Distance
+- `B` [Brute-Force Algorithm](string/search/brute-force/README.md)
 - `I` Knuth-Morris-Pratt Algorithm
 - `I` Rabin-Karp Algorithm
 - `I` Boyer-Moore Algorithm
