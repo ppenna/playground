@@ -4,34 +4,41 @@
 
 _Leia isso em outros idiomas: [English](README.md), [Português](README.pt-br.md)_
 
-O _Counting Sort_ (Ordenação por Contagem) é um algoritmo de ordenação de
-inteiros criado por Harold Seward em 1954. Ele é um algoritmo de Programação
-Dinâmica, que funciona construindo um histograma cumulativo das chaves do
-arranjo de entrada e o usa para construir um arranjo de saída ordenado.
+- [O quê é o _Counting Sort_?](#o-quê-é-o-counting-sort)
+- [Quais são as características do _Counting Sort_?](#quais-são-as-características-do-counting-sort)
+- [Qual é o algoritmo do _Counting Sort_?](#qual-é-o-algoritmo-do-counting-sort)
+- [Qual é o desempenho do _Counting Sort_?](#qual-é-o-desempenho-do-counting-sort)
+- [Leitura Complementar](#leitura-complementar)
 
-Em sua definição clássica, o _Counting Sort_ assume que as chaves do arranjo
-possuem valores positivos e que o valor da maior chave é conhecido de antemão. O
-_Counting Sort_ é geralmente usado como sub-rotina em outros métodos de
-ordenação não comparativos, como o _Radix Sort_ e o _Bucket Sort_.
+## O quê é o _Counting Sort_?
 
-## Algoritmo
+O _Counting Sort_ (Ordenação por Contagem) é um algoritmo de ordenação de inteiros criado por Harold Seward em 1954. Ele é um algoritmo de Programação Dinâmica, que funciona construindo um histograma cumulativo das chaves do arranjo de entrada e o usando essa estrutura para construir um arranjo de saída ordenado.
 
-1. Construa o histograma cumulativo das chaves do arranjo de entrada. Nessa
-estrutura de dados auxiliar, a primeira classe dá a frequência das chaves de
-valor 0, a segunda classe dá a frequência das chaves de valor 1 mais o valor da
-classe anterior, e assim por diante.
-2. Construa um arranjo de saída ordenado usando o histograma cumulativo para
-determinar a posição correta dos elementos. Por exemplo, se $x$ é um elemento do
-arranjo de entrada, $x$ possui uma chave $k$, e $h(k) é a frequência cumulativa
-para a chave $k$, então $x$ deve ser colocado no arranjo de saída na posição
-$[h(k), h(k+1))$.
+Apesar de possui um desempenho assintótico eficiente, o _Counting Sort_ é
+geralmente usado como sub-rotina em outros métodos de ordenação não
+comparativos, como o _Radix Sort_ e o _Bucket Sort_.
 
-## Desempenho
+## Quais são as características do _Counting Sort_?
 
-- Melhor Caso: $O(n + k)$
-- Pior Caso: $O(n + k)$
+- O _Counting Sort_ é um algoritmo iterativo.
+- O _Counting Sort_ é um algoritmo de ordenação de inteiros.
+- O _Counting Sort_ é um algoritmo de ordenação estável.
+- O desempenho do algoritmo _Counting Sort_ é pouco sensível aos dados de entrada.
+- O _Counting Sort_ necessita de uma estrutura de dados auxiliar para funcionar.
+
+## Qual é o algoritmo do _Counting Sort_?
+
+1. Crie um arranjo auxiliar `H` de tamanho igual à maior chave presente no arranjo original `A`.
+2. Conte o número de ocorrências de cada elemento em `A` e armazene essa contagem no arranjo auxiliar `H`. Nesse arranjo auxiliar, a primeira posição dá a frequência de elementos de valor `0` em `A`, a segunda posição dá a frequência de elementos de valor `1` em `A` e assim por diante.
+3. Percorra o arranjo auxiliar `H` para criar o histograma cumulativo de cada elemento de `A`. Para tanto, acumule o valor da frequência do elemento `i + 1` com a frequência do elemento `i`.
+4. Use o arranjo `H` para construir um arranjo de saída ordenado. Para tanto, se `x` é um elemento no arranjo `A` que possui uma frequência cumulativa `H(x)`, então `x` deve ser colocado no arranjo de saída entre a posição `H(x)` e `H(x + 1)`.
+
+## Qual é o desempenho do _Counting Sort_?
+
+O desempenho do _Counting Sort_ é pouco sensível a entrada. Por esse motivo, o desempenho assintótico do algoritmo é linear tanto para o pior quanto melhor caso. Se `n` é o número de elementos no arranjo de entrada e `k` é o valor da maior chave nesse arranjo, o desempenho do _Counting Sort_ é:
+
+- `O(n + k)` operações inteiras
 
 ## Leitura Complementar
 
-- [Desenvolvendo Software](http://desenvolvendosoftware.com.br/algoritmos/ordenacao/counting-sort.html)
-- [Wikipédia](https://pt.wikipedia.org/wiki/Counting_sort)
+- [Desenvolvendo Software | Counting Sort](http://desenvolvendosoftware.com.br/algoritmos/ordenacao/counting-sort.html)
