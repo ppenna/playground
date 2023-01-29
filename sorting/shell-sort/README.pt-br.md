@@ -10,6 +10,7 @@ _Leia isso em outros idiomas: [English](README.md), [Português](README.pt-br.md
 - [Qual o algoritmo de Shell Sort?](#qual-o-algoritmo-de-shell-sort)
 - [Qual sequência de intervalos usar no Shell Sort?](#qual-sequência-de-intervalos-usar-no-shell-sort)
 - [Qual o desempenho do Shell Sort?](#qual-o-desempenho-do-shell-sort)
+- [Leitura Complementar](#leitura-complementar)
 
 ## O quê é o Shell Sort?
 
@@ -59,3 +60,7 @@ O desempenho no melhor caso para o algoritmo Shell Sort acontece quando a coleç
 O desempenho no pior caso para o algoritmo Shell Sort acontece quando a coleção de entrada está ordenada de forma inversa. Nesse cenário, o algoritmo tem um custo quadrático de comparações, em função do número de elementos `n` na coleção:
 
 - `O(n²)` comparações
+
+## Leitura Complementar
+
+- [Desenvolvendo Software | Shell Sort](http://desenvolvendosoftware.com.br/algoritmos/ordenacao/merge-sort.html)
