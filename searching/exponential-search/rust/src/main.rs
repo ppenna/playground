@@ -13,8 +13,6 @@ fn binary_search<T: PartialOrd>(array: &[T], mut low: usize, mut high: usize, x:
     while low < high {
         let mid: usize = low + (high - low) / 2;
 
-        eprintln!("low: {:?}, mid: {:?} high: {:?}", low, mid, high);
-
         // Found.
         if &array[mid] == x {
             return mid;
@@ -39,7 +37,7 @@ fn exponential_search<T: PartialOrd + std::fmt::Debug>(array: &[T], x: &T) -> us
     while (bound < array.len()) && (&array[bound] < x) {
         bound *= 2;
     }
-    eprintln!("bound={:?} x={:?}", bound, x);
+
     binary_search(array, bound / 2, cmp::min(bound + 1, array.len()), x)
 }
 
