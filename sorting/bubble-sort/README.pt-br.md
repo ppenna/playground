@@ -12,7 +12,7 @@ _Leia isso em outros idiomas: [English](README.md), [Português](README.pt-br.md
 
 ## O quê é o _Bubble Sort_?
 
-O _Bubble Sort_ (Ordenação por Bolha) é um algoritmo de ordenação que funciona trocando repetidamente de posição, os elementos adjacentes em um arranjo que estão fora de ordem entre si.  de um arranjo que estão fora de ordem. O algoritmo leva esse nome por "borbulhar" os maiores elementos para o final do arranjo.
+O _Bubble Sort_ (Ordenação por Bolha) é um algoritmo de ordenação que funciona trocando repetidamente de posição, os elementos adjacentes em um arranjo que estão fora de ordem entre si. O algoritmo leva esse nome por "borbulhar" os maiores elementos para o final do arranjo.
 
 O _Bubble Sort_ apresenta um desempenho ruim, quando comparado à outros algoritmos de ordenação. No entanto, por ser de simples compreensão, é frequentemente usado para motivar o estudo de outros algoritmos de ordenação.
 
