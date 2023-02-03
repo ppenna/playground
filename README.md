@@ -87,6 +87,7 @@ a production environment.
 - `I` [Knuth-Morris-Pratt Algorithm](string/search/kmp/README.md)
 - `I` [Rabin-Karp Algorithm](string/search/rabin-karp/README.md)
 - `I` [Boyer-Moore-Horspool Algorithm](string/search/bmh/README.md)
+- `I` [Longest Common Subsequence](string/lcs/README.md)
 
 ### Graphs
 
