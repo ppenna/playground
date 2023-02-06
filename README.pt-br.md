@@ -88,6 +88,7 @@ um ambiente de produção não é recomendado.
 - `I` [Algoritmo de Rabin-Karp](string/search/rabin-karp/README.pt-br.md)
 - `I` [Algoritmo de Boyer-Moore-Horspool](string/search/bmh/README.pt-br.md)
 - `I` [Maior Subsequência Comum](string/lcs/README.pt-br.md)
+- `I` [Algoritmo de Levenshtein](string/levenshtein/README.pt-br.md)
 
 ### Grafos
 
