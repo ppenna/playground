@@ -46,7 +46,7 @@ static const char *bmh(const char *text, const char *pattern)
         }
 
         // Slide matching window.
-        i += skip[(size_t)pattern[j]];
+        i += skip[(size_t)text[i + patternlen - 1]];
     }
 
     // Match not found.
