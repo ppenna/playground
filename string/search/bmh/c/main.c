@@ -21,15 +21,15 @@ static size_t match(const char *s1, const char *s2, size_t length)
 }
 
 // Searches for a pattern in a text using Boyer-Moore-Horspool algorithm.
-static const char *bmh(const char *text, const char *pattern)
+static const char *bmh_search(const char *text, const char *pattern)
 {
-    const size_t RADIX = 256;            // Number of symbols in the alphabet.
-    size_t skip[RADIX];                  // Skip table.
+    const size_t ALPHABET_LENGTH = 256;  // Number of symbols in the alphabet.
+    size_t skip[ALPHABET_LENGTH];        // Skip table.
     size_t textlen = strlen(text);       // Length of the input text.
     size_t patternlen = strlen(pattern); // Length of the search pattern.
 
     // Build skip table.
-    for (size_t i = 0; i < RADIX; i++) {
+    for (size_t i = 0; i < ALPHABET_LENGTH; i++) {
         skip[i] = patternlen;
     }
     for (size_t i = 0; i < patternlen - 1; i++) {
@@ -97,7 +97,7 @@ static void test(const char *pattern, bool verbose)
 
     // Search string.
     tstart = clock();
-    result = bmh(text, pattern);
+    result = bmh_search(text, pattern);
     tend = clock();
 
     // Report time.
