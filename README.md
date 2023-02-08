@@ -45,7 +45,7 @@ a production environment.
 - `B` Linked Lists
 - `B` [Stacks](data-structures/stack/README.md)
 - `B` [Queues](data-structures/queue/README.md)
-- `I` Priority Queues
+- `I` [Binary Heap](data-structures/binary-heap/README.md)
 - `I` Disjoint Sets
 
 ### Non-Linear Data Structures

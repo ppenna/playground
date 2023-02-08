@@ -45,7 +45,7 @@ um ambiente de produção não é recomendado.
 - `B` Listas Encadeadas
 - `B` [Pilhas](data-structures/stack/README.pt-br.md)
 - `B` [Filas](data-structures/queue/README.pt-br.md)
-- `I` Filas de Prioridade
+- `I` [Heap Binária](data-structures/binary-heap/README.pt-br.md)
 - `I` Conjuntos Disjuntos
 
 ### Estruturas de Dados Não Lineares
