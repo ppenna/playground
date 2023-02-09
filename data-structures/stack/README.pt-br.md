@@ -24,7 +24,7 @@ Uma analogia para essa estrutura de dados é uma pilha de livros. Livros são se
 
 ## Qual é a estrutura de uma pilha?
 
-Um pilha `p` pode ser construída com os seguintes componentes:
+Uma pilha `p` pode ser construída com os seguintes componentes:
 
 - `p.celulas[]`: células que armazenam os elementos da pilha.
 - `p.topo`: um ponteiro que referencia o elemento do topo da pilha.
