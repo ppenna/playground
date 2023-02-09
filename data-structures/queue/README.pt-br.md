@@ -23,7 +23,7 @@ Uma analogia para essa estrutura de dados são as filas de supermercado. Pessoas
 
 ## Qual é a estrutura de uma fila?
 
-Um fila `f` pode ser construída com os seguintes componentes:
+Uma fila `f` pode ser construída com os seguintes componentes:
 
 - `f.celulas[]`: células que armazenam os elementos da fila.
 - `f.primeiro`: um ponteiro que referencia o primeiro elemento da fila.
