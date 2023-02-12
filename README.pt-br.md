@@ -92,7 +92,7 @@ um ambiente de produção não é recomendado.
 
 ### Grafos
 
-- `I` Busca em Largura
+- `I` [Busca em Largura](graph/search/bfs/README.pt-br.md)
 - `I` Busca em Profundidade
 - `A` Algoritmo de Kruskal
 - `A` Algoritmo de Prim
