@@ -95,7 +95,7 @@ a production environment.
 - `I` Depth-First Search
 - `A` Kruskal's Algorithm
 - `A` Prim's Algorithm
-- `A` Dijkstra's Algorithm
+- `A` [Dijkstra's Algorithm](graph/search/dijkstra/README.md)
 - `A` Bellman-Ford's Algorithm
 
 ### Compression
