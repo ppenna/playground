@@ -1,3 +1,4 @@
+// Copyright (C) 2022 Pedro Henrique Penna <pedrohenriquepenna@outlook.com>
 
 #include <assert.h>
 #include <stdbool.h>
@@ -255,7 +256,7 @@ static void test(size_t nnodes, bool verbose)
 
     // Search in the array.
     tstart = clock();
-    path_length = bfs(g, 0, path);
+    path_length = dijkstra(g, 0, path);
     tend = clock();
 
     // Report time.
