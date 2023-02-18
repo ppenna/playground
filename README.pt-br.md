@@ -94,7 +94,7 @@ um ambiente de produção não é recomendado.
 - `I` [Busca em Largura](graph/search/bfs/README.pt-br.md)
 - `I` Busca em Profundidade
 - `A` Algoritmo de Kruskal
-- `A` Algoritmo de Prim
+- `A` [Algoritmo de Prim](/graph/spanning-tree/prim/README.pt-br.md)
 - `A` [Algoritmo de Dijkstra](graph/search/dijkstra/README.pt-br.md)
 - `A` Algoritmo de Bellman-Ford
 
