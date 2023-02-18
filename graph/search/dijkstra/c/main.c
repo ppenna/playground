@@ -291,12 +291,11 @@ static size_t dijkstra(const struct graph *g, size_t src, size_t dest, size_t *p
 
         // Process all neighbor nodes.
         for (size_t j = 0; j < g->nnodes; j++) {
-            size_t new_distance = 0;
             struct link *l = graph_link(g, i, j);
 
             // This is a neighbor.
             if (l->weight > 0) {
-                new_distance = distances[i] + l->weight;
+                size_t new_distance = distances[i] + l->weight;
 
                 // Update distances.
                 if (new_distance < distances[j]) {
