@@ -112,7 +112,7 @@ um ambiente de produção não é recomendado.
 ### Aprendizado de Máquina
 
 - `A` K-Vizinhos Mais Próximos
-- `A` Agrupamento K-Means
+- `A` [Agrupamento K-Means](machine-learning/k-means/README.pt-br.md)
 - `A` Redes Neurais
 
 ### Matemática
