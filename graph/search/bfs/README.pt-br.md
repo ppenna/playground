@@ -28,7 +28,7 @@ A Busca em Largura (BFS -- _Breadth-First Search_) é um algoritmo de busca em g
 
 - **Encontrar Componentes Conectados em Um Grafo** -- A Busca em Largura pode ser usada para encontrar todas os componentes conectados em um grafo não direcionado.
 
-- **Resolução de Problemas** -- A Busca em Largura é usada como uma técnica de busca para resolver problemas, como encontrar a solução para um quebra-cabeça ou encontrar o objetivo em um jogo.
+- **Resolução de Problemas** -- A Busca em Largura pode ser usada como uma técnica de busca para resolver problemas, como encontrar a solução para um quebra-cabeça ou encontrar o objetivo em um jogo.
 
 ## Qual é o algoritmo de Busca em Largura?
 
@@ -41,7 +41,7 @@ A Busca em Largura (BFS -- _Breadth-First Search_) é um algoritmo de busca em g
 
 ## Qual o desempenho da Busca em Largura?
 
-A Busca em Largura possui uma complexidade linear de tempo e espaço, em função do seu número de nós `|V|`  e arestas `|E|`:
+A Busca em Largura possui uma complexidade linear de tempo e espaço, em função do número de nós `|V|`  e arestas `|E|` do grafo:
 
 - Complexidade de Tempo: `O(|V| + |E|)`
 - Complexidade de Espaço: `O(|V|)`
