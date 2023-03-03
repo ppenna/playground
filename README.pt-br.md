@@ -130,5 +130,5 @@ um ambiente de produção não é recomendado.
 
 ### Algoritmos Evolucionários
 
-- `A` Algoritmo Genético
+- `A` [Algoritmo Genético](evolutionary-algorithms/genetic-algorithm/README.pt-br.md)
 - `A` Otimização por Enxame de Partículas
