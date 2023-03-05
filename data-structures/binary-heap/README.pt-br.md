@@ -16,7 +16,7 @@ Uma Heap Binária é uma estrutura de dados não linear que implementa uma fila 
 ## Onde Heaps Binárias são usadas?
 
 - **Algoritmos de de Ordenação** -- Uma Heap Binária é usada para implementar o algoritmo de ordenação Heapsort.
-- **Roteamento em Grafos** -- Uma Heap Binária é usada para encontrar o caminho mais curto entre dois nós em um grago, como no Algoritmo de Dijkstra.
+- **Roteamento em Grafos** -- Uma Heap Binária é usada para encontrar o caminho mais curto entre dois nós em um grafo, como no Algoritmo de Dijkstra.
 - **Gerenciamento de Recursos** -- Heaps Binários podem ser usados para gerenciar recursos, como memória ou processos, garantindo que as solicitações com a maior prioridade sejam atendidas primeiro.
 - **Bancos de Dados** -- Heaps Binários são usados em bancos de dados para implementar índices, otimizar consultas de busca e garantir a consistência de dados em operações de atualização.
 
