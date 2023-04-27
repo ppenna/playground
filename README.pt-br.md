@@ -46,7 +46,7 @@ um ambiente de produção não é recomendado.
 - `B` [Pilhas](data-structures/stack/README.pt-br.md)
 - `B` [Filas](data-structures/queue/README.pt-br.md)
 - `I` [Heap Binária](data-structures/binary-heap/README.pt-br.md)
-- `I` Conjuntos Disjuntos
+- `I` [Conjuntos Disjuntos](data-structures/disjoint-set/README.pt-br.md)
 
 ### Estruturas de Dados Não Lineares
 
