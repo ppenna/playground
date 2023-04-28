@@ -1,4 +1,4 @@
-# K-Means
+# Clusterização K-Means
 
 [![en](https://img.shields.io/badge/lang-en-red.svg)](./README.md) [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](README.pt-br.md)
 
@@ -46,6 +46,6 @@ O K-means é um algoritmo de aprendizado de máquina não-supervisionado propost
 
 ## Qual o desempenho do _K-Means_?
 
- O desempenho do algoritmo _K-Means_ é afetado por diversos fatores, como a escolha do número de clusters `k`, as características do conjunto de dados, a escolha inicial dos centroides e o número de iterações. Em geral, a complexidade do algoritmo é polinomial, em função do número de pontos `n`, dimensão `d` dos dados, do número de clusters `k` e o número de iterações `i`:
+O desempenho do algoritmo _K-Means_ é afetado por diversos fatores, como a escolha do número de clusters `k`, as características do conjunto de dados, a escolha inicial dos centroides e o número de iterações. Em geral, a complexidade do algoritmo é polinomial, em função do número de pontos `n`, dimensão `d` dos dados, do número de clusters `k` e o número de iterações `i`:
 
 - `O(ndki)` operações de ponto flutuante.
