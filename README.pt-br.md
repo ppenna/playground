@@ -111,7 +111,7 @@ um ambiente de produção não é recomendado.
 
 ### Aprendizado de Máquina
 
-- `A` K-Vizinhos Mais Próximos
+- `A` [K-Vizinhos Mais Próximos](machine-learning/knn/README.pt-br.md)
 - `A` [Agrupamento K-Means](machine-learning/k-means/README.pt-br.md)
 - `A` Redes Neurais
 
