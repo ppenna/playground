@@ -118,7 +118,7 @@ a production environment.
 ### Math
 
 - `B` Operations with Matrices
-- `B` Sieve of Eratosthenes
+- `B` [Sieve of Eratosthenes](math/sieve-erastothenes/README.md)
 - `B` Euclidean Algorithm
 - `I` Gaussian Elimination
 - `A` Discrete Fourier Transform
