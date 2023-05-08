@@ -117,7 +117,7 @@ um ambiente de produção não é recomendado.
 
 ### Matemática
 
-- `B` Operações em Matrizes
+- `B` [Operações em Matrizes](math/matrix/README.pt-br.md)
 - `B` [Crivo de Eratóstenes](math/sieve-erastothenes/README.pt-br.md)
 - `B` Algoritmo de Euclides
 - `I` Eliminação Gaussiana

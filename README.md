@@ -117,7 +117,7 @@ a production environment.
 
 ### Math
 
-- `B` Operations with Matrices
+- `B` [Operations with Matrices](math/matrix/README.md)
 - `B` [Sieve of Eratosthenes](math/sieve-erastothenes/README.md)
 - `B` Euclidean Algorithm
 - `I` Gaussian Elimination
