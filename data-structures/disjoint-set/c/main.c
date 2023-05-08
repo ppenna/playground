@@ -133,7 +133,7 @@ static void test(unsigned max_cardinality, bool verbose)
 // Prints program usage and exits.
 static void usage(char *const argv[])
 {
-    printf("%s - Testing program for queues .\n", argv[0]);
+    printf("%s - Testing program for disjoint sets.\n", argv[0]);
     printf("Usage: %s [--verbose] <maximum cardinality>\n", argv[0]);
     exit(EXIT_FAILURE);
 }
