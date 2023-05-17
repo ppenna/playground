@@ -4,12 +4,11 @@
 
 _Leia isso em outros idiomas: [English](README.md), [Português](README.pt-br.md)_
 
-- [O quê é o _KNN_?](#o-quê-é-o-knn)
-- [Quais são as características do _KNN_?](#quais-são-as-características-do-knn)
-- [Quais as aplicações do _KNN_?](#quais-as-aplicações-do-knn)
-- [Quais são os passos do algoritmo _KNN_?](#quais-são-os-passos-do-algoritmo-knn)
-- [Como melhorar a precisão do algoritmo _KNN_](#como-melhorar-a-precisão-do-algoritmo-knn)
-- [Qual o desempenho do _KNN_?](#qual-o-desempenho-do-knn)
+- [O quê é o _Crivo de Eratóstenes_?](#o-quê-é-o-crivo-de-eratóstenes)
+- [Quais são as características do _Crivo de Eratóstenes_?](#quais-são-as-características-do-crivo-de-eratóstenes)
+- [Quais as aplicações do _Crivo de Eratóstenes_?](#quais-as-aplicações-do-crivo-de-eratóstenes)
+- [Quais são os passos do _Crivo de Eratóstenes_?](#quais-são-os-passos-do-crivo-de-eratóstenes)
+- [Qual o desempenho do _Crivo de Eratóstenes_?](#qual-o-desempenho-do-crivo-de-eratóstenes)
 
 ## O quê é o _Crivo de Eratóstenes_?
 
