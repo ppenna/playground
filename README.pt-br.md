@@ -55,7 +55,7 @@ um ambiente de produção não é recomendado.
     - `B` Árvores Binárias de Busca
     - `I` [Árvores AVL](data-structures/avl-tree/README.pt-br.md)
     - `I` Árvores Vermelha-Preta
-- `I` Árvores Digitais
+- `I` [Tries](data-structures/trie/README.pt-br.md)
 - `I` Grafos
 
 ## Algoritmos
