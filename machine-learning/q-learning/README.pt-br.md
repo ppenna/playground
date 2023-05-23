@@ -1,5 +1,14 @@
 # Q-Learning
 
+- [O quê é o Q-Learning?](#o-quê-é-o-q-learning)
+- [Quais as principais características do algoritmo Q-Learning?](#quais-as-principais-características-do-algoritmo-q-learning)
+- [Quais são as aplicações do algoritmo Q-Learning?](#quais-são-as-aplicações-do-algoritmo-q-learning)
+- [Quais são os passos do algoritmo Q-Learning?](#quais-são-os-passos-do-algoritmo-q-learning)
+- [Como funciona a estratégia de exploração epsilon-greedy?](#como-funciona-a-estratégia-de-exploração-epsilon-greedy)
+- [O que é a estratégia de exploração epsilon-greedy com decaimento?](#o-que-é-a-estratégia-de-exploração-epsilon-greedy-com-decaimento)
+- [Qual a complexidade computacional do algoritmo Q-Learning?](#qual-a-complexidade-computacional-do-algoritmo-q-learning)
+
+
 ## O quê é o Q-Learning?
 
 O Q-Learning é um algoritmo de aprendizado por reforço (_reinforcement learning_) proposto por Christopher Watkins em 1989. Esse algoritmo aprende a tomar decisões interagindo diretamente com o ambiente, sem a necessidade de conhecimento prévio ou de supervisão humana. Por esse motivo, o Q-Learning é amplamente aplicado na resolução de problemas complexos e dinâmicos.
