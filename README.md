@@ -114,6 +114,7 @@ a production environment.
 - `A` [K-Nearest Neighbors](machine-learning/knn/README.md)
 - `A` [K-Means Clustering](machine-learning/k-means/README.md)
 - `A` Neural Networks
+- `A` [Q-Learning](machine-learning/q-learning/README.md)
 
 ### Math
 
