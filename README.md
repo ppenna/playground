@@ -53,7 +53,7 @@ a production environment.
 - `B` Dictionaries
 - Trees
     - `B` Binary Search Trees
-    - `I` AVL Trees
+    - `I` [AVL Trees](data-structures/avl-tree/README.md)
     - `I` Red-Black Trees
 - `I` Tries
 - `I` Graphs

@@ -53,7 +53,7 @@ um ambiente de produção não é recomendado.
 - `B` Dicionários
 - Árvores
     - `B` Árvores Binárias de Busca
-    - `I` Árvores AVL
+    - `I` [Árvores AVL](data-structures/avl-tree/README.pt-br.md)
     - `I` Árvores Vermelha-Preta
 - `I` Árvores Digitais
 - `I` Grafos
