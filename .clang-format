@@ -1,0 +1,8 @@
+{
+    BasedOnStyle: Microsoft,
+    BreakBeforeBraces: Linux,
+    BinPackArguments: false,
+    ColumnLimit: 80,
+    AllowAllParametersOfDeclarationOnNextLinux: true,
+    AllowAllArgumentsOnNextLine: true,
+}
