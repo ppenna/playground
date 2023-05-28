@@ -33,6 +33,8 @@ O _Quicksort_ apresenta um desempenho marginalmente superiora outros algoritmos 
 4. Recursivamente aplique os Passos 1 -- 3 nos sub-arranjos da esquerda e direita.
 5. Quando a recursão parar, o arranjo está ordenado.
 
+Para lidar com chaves duplicadas, o passo 3 usa 3 sub-arranjos, de forma que os elementos que forem menores do que o pivô ficam no primeiro sub-arranjo, os elementos iguais ao pivô ficam no sub-arranjo do meio, e os elementos maiores que o pivô ficam no terceiro sub-arranjo.
+
 ## Qual é o desempenho do _Quicksort_?
 
 ### Pior Caso
@@ -68,6 +70,10 @@ Uma solução alternativa para atacar esse problema é inserir elementos sentine
 Conforme o _Quicksort_ realiza chamadas recursivas, o tamanho do arranjo de trabalho diminui até ter apenas um elemento (caso base da recursão). Enquanto essa característica recursiva não é um problema em teoria, na prática ela incorre em um sobrecusto dominante no tempo de execução do algoritmo, quando o arranjo de trabalho é pequeno demais.
 
 Uma forma de evitar esse problema é modificar a implementação original do _Quicksort_ de forma que, quando o arranjo de trabalho for pequeno, a recursão é interrompida e um algoritmo iterativo é usado. O limiar para a parada de recursão bem como algoritmo iterativo a ser utilizado dependem caso a caso. No entanto, vale considerar que popularmente utiliza-se o limiar de 10 a 20 elementos e o _Insertion Sort_ (Ordenação por Inserção) como algoritmo de ordenação.
+
+### Chaves Duplicadas
+
+O _Quicksort_ apresenta uma complexidade quadrática quando lida com um arranjo cheio de chaves duplicadas. Ele pode ser modificado usando um algoritmo de partição tripla, tornando esse caso em complexidade linear. Essa solução foi inspirada no problema da bandeira da Holanda, um desafio de programação proposto por Edsger Dijkstra em 1976.
 
 ## Leitura Complementar
 
