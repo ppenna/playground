@@ -8,8 +8,6 @@ _Leia isso em outros idiomas: [English](README.md), [Português](README.pt-br.md
 - [Onde conjuntos disjuntos são usados?](#onde-conjuntos-disjuntos-são-usados)
 - [Como implementar um conjunto disjunto?](#como-implementar-um-conjunto-disjunto)
 - [Quais são as operações básicas de um conjunto disjunto?](#quais-são-as-operações-básicas-de-um-conjunto-disjunto)
-  - [Operação União](#operação-união)
-  - [Operação Busca](#operação-busca)
 
 ## O quê é um conjunto disjunto?
 
