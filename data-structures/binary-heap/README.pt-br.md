@@ -52,3 +52,9 @@ Uma Heap Binária `h` pode ser construída com os seguintes componentes:
 3. Compare o valor do nó com os valores de seus filhos. Se o valor do nó é maior que o valor de algum de seus filhos em uma heap de mínimo, ou se o valor do nó é menor que o valor de algum de seus filhos em uma heap de máximo, troque o valor do nó com o valor do filho de maior prioridade.
 4. Repita o Passo 3 até que o nó esteja na posição correta na árvore, satisfazendo as propriedades de uma heap binária.
 5. Retorne o valor armazenado em `x`.
+
+#### Heap Mediana
+
+> Segue o seguinte problema para ilustrar uma aplicação de Heaps Binárias:
+> Crie um tipo de dado que ofereça operações de inserção em tempo logarítmico, encontrar-a-mediana em tempo constante, e remover-a-mediana em tempo logarítmico. Se o número de chaves no tipo de dado for par, encontre/remova a menor mediana.
+> Como solução, mantenha duas Heaps Binárias, uma que retorna o maior elemento, e outra que retorna o menor elemento. Se o elemento a inserir for maior do que a mediana, insira no Min Heap. Caso contrário, insira no Max Heap. Se o tamanho do Min Heap for maior do que o Max Heap, remova um elemento do Min Heap e insira no Max Heap. Se o tamnho do Max Heap for maior do que o do Min Heap + 1, remova um elemento do Max Heap e insira no Min Heap.
