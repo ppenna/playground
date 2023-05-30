@@ -57,7 +57,7 @@ Uma Heap Binária `h` pode ser construída com os seguintes componentes:
 
 Segue o seguinte problema para ilustrar uma aplicação de Heaps Binárias:
 > Crie um tipo de dado que ofereça operações de inserção em tempo logarítmico, encontrar-a-mediana em tempo constante, e remover-a-mediana em tempo logarítmico. Se o número de chaves no tipo de dado for par, encontre/remova a menor mediana.
-1. Como solução, mantenha duas Heaps Binárias, uma que retorna o maior elemento, e outra que retorna o menor elemento. A metade (arrendodada para baixo) do superior dos elementos será armazenada no Min Heap, e a metade (arrendodada para baixo) inferior no Max Heap. A mediana é sempre o maior elemento do Max Heap.
+1. Como solução, mantenha duas Heaps Binárias, uma que retorna o maior elemento, e outra que retorna o menor elemento. A metade (arrendodada para baixo) superior dos elementos será armazenada no Min Heap, e a metade (arrendodada para cima) inferior no Max Heap. A mediana é sempre o maior elemento do Max Heap.
 2. Para operações de inserção, se o elemento a inserir for maior do que a mediana, insira no Min Heap. Caso contrário, insira no Max Heap. Se o tamanho do Min Heap for maior do que do Max Heap, remova um elemento do Min Heap e insira no Max Heap. Se o tamanho do Max Heap for maior do que o do Min Heap + 1, remova um elemento do Max Heap e insira no Min Heap.
-3. Para operações de remoção de mediana, remova do Max Heap. Se o tamanho do Max Heap for menor do que do Min Heap, remova do Min Heap e insira no Max Heap.
+3. Para operações de remoção de mediana, remova do Max Heap. Se o tamanho do Max Heap for menor do que do Min Heap, remova do Min Heap e insira no Max Heap. Retorne o elemento removido do Max Heap.
 4. Para encontrar a mediana, basta acessar o elemento da raiz do Max Heap.
