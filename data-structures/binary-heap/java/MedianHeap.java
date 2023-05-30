@@ -15,6 +15,17 @@ public class MedianHeap <E extends Comparable<E>> {
     }
 
     public void insert(E e) {
+        if (maxHeap.isEmpty()) {
+            maxHeap.insert(e);
+            return;
+        }
+
+        if (minHeap.isEmpty()) {
+            maxHeap.insert(e);
+            minHeap.insert(maxHeap.deleteMax());
+            return;
+        }
+
         // If MaxHeap is longer, then we must add to the MinHeap to make them balanced.
         if (maxHeap.size() > minHeap.size()) {
             // Add directly to the MinHeap if it belongs in the greater half of the elements.
@@ -57,5 +68,19 @@ public class MedianHeap <E extends Comparable<E>> {
             maxHeap.insert(minHeap.deleteMin());
 
         return median;
+    }
+
+    // Tests for correctness.
+    public static void main(String[] args) {
+        MedianHeap<Integer> medianHeap = new MedianHeap<>();
+
+        // Populates the heap.
+        for (int i = 0; i < 10; i++)
+            medianHeap.insert(i);
+
+        // Expected: 4 5 3 6 2 7 1 8 0 9.
+        for (int i = 0; i < 10; i++)
+            System.out.printf("%d ", medianHeap.removeTheMedian());
+
     }
 }
