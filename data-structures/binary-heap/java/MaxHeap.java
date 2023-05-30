@@ -10,7 +10,7 @@ public class MaxHeap <E extends Comparable<E>> {
 
     // Creating a heap adding n elements, one at a time, has n log n time complexity.
     public MaxHeap () {
-        heap = (E[]) new Object[DEFAULT_CAPACITY];
+        heap = (E[]) new Comparable[DEFAULT_CAPACITY];
         size = 0;
         heap[0] = null;
     }
@@ -20,7 +20,7 @@ public class MaxHeap <E extends Comparable<E>> {
         size = array.length;
         // Creates the heap with capacity for the entire array.
         // If insert operations are expected, then 2 * size is better.
-        heap = (E[]) new Object[size + 1];
+        heap = (E[]) new Comparable[size + 1];
         System.arraycopy(array, 0, heap, 1, size);
         heap[0] = null;
 
@@ -60,7 +60,7 @@ public class MaxHeap <E extends Comparable<E>> {
         sink(1);
 
         // Resizes the array if it's less than 25% full.
-        if (4 * size < heap.length && !isEmpty())
+        if (4 * size < heap.length && size > 1)
             resize(size * RESIZING_FACTOR);
 
         // Returns the max element.
@@ -122,8 +122,22 @@ public class MaxHeap <E extends Comparable<E>> {
     }
 
     private void resize(int capacity) {
-        E[] newHeap = (E[]) new Object[capacity];
+        E[] newHeap = (E[]) new Comparable[capacity];
         System.arraycopy(heap, 0, newHeap, 0, size + 1);
         heap = newHeap;
+    }
+
+    // Tests for correctness.
+    public static void main(String[] args) {
+        MaxHeap<Integer> maxHeap = new MaxHeap<>();
+
+        // Populates the heap.
+        for (int i = 0; i < 10; i++)
+            maxHeap.insert(i);
+
+        // Expected: 9, 8, 7, 6, 5, 4, 3, 2, 1, 0.
+        for (int i = 0; i < 10; i++)
+            System.out.printf("%d ", maxHeap.deleteMax());
+
     }
 }
