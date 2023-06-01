@@ -4,41 +4,72 @@
 
 _Leia isso em outros idiomas: [English](README.md), [Português](README.pt-br.md)_
 
-- [O quê é um conjunto disjunto?](#o-quê-é-um-conjunto-disjunto)
-- [Onde conjuntos disjuntos são usados?](#onde-conjuntos-disjuntos-são-usados)
-- [Como implementar um conjunto disjunto?](#como-implementar-um-conjunto-disjunto)
-- [Quais são as operações básicas de um conjunto disjunto?](#quais-são-as-operações-básicas-de-um-conjunto-disjunto)
+- [O quê é um Conjunto Disjunto?](#o-quê-é-um-conjunto-disjunto)
+- [Onde Conjuntos Disjuntos são usados?](#onde-conjuntos-disjuntos-são-usados)
+- [Quais são as operações básicas de um Conjunto Disjunto?](#quais-são-as-operações-básicas-de-um-conjunto-disjunto)
+- [Como implementar um Conjunto Disjunto?](#como-implementar-um-conjunto-disjunto)
+- [Como otimizar a implementação de um Conjunto Disjunto?](#como-otimizar-a-implementação-de-um-conjunto-disjunto)
+- [Qual o desempenho de um Conjunto Disjunto?](#qual-o-desempenho-de-um-conjunto-disjunto)
 
-## O quê é um conjunto disjunto?
+## O quê é um Conjunto Disjunto?
 
-Um Conjunto Disjunto é uma estrutura de dados que mantém uma coleção elementos, que por sua vez estão particionados em vários conjuntos não sobrepostos. Essa estrutura de dados possibilita que elementos sejam agrupados e particionados em conjuntos de maneira eficiente.
+Um Conjunto Disjunto (_Disjoint Set_ ou _Union-Find_) é uma estrutura de dados que mantém uma coleção elementos, que por sua vez estão organizados em vários conjuntos não sobrepostos. Essa estrutura de dados possibilita que elementos sejam agrupados de maneira eficiente.
 
-## Onde conjuntos disjuntos são usados?
+## Onde Conjuntos Disjuntos são usados?
 
-- Na implementação do Algoritmo de Kruskal, umaa estrutura de dados Conjunto Disjunto é usada para manter controle dos componentes conexos do grafo e para verificar se ao adicionar uma aresta em uma iteração do algoritmo as propriedades da árvore geradora mínima em construção seria violada.
-- Em problemas de segmentação de imagem, a estrutura de dados Conjunto Disjunto é usada para manter controle das conexões entre os pixels da imagem, permitindo que esses sejam agrupados em regiões com propriedades similares.
-- Em algoritmos de aprendizado de máquina, a estrutura de dados Conjunto Disjunto pode ser usada para agrupar dados em conjuntos com base em suas características e, então, ajudar no processo de treinamento.
+- **Algoritmo de Kruskal** - Um Conjunto Disjunto é usado no algoritmo de Kruskal para manter controle dos componentes conexos do grafo e garantir que, a cada iteração do algoritmo, as propriedades da árvore geradora mínima em construção não são violadas.
 
-## Como implementar um conjunto disjunto?
+- **Segmentação de Imagens** - Conjuntos Disjuntos podem ser usados em alguns algoritmos de segmentação de imagens, permitindo que pixels sejam agrupados em regiões com propriedades similares.
 
-- **Usando uma coleção de listas encadeadas**, com cada lista representando um conjunto disjunto. Essa implementação é de fácil compreensão e suporta apenas a operação `união` de forma eficiente.
-- **Usando uma coleção de árvores**, com cada árvore representando um conjunto disjunto. Essa implementação é de compreensão mais complexa, mas suporta as operações de `união` e `busca` de forma eficiente.
+- **Aprendizado de Máquina** - Conjuntos Disjuntos podem ser usados na etapa de treinamento de alguns algoritmos de aprendizado de máquina, para agrupar dados com base em características similares.
 
-## Quais são as operações básicas de um conjunto disjunto?
+## Quais são as operações básicas de um Conjunto Disjunto?
 
-- [`união`](#operação-união) (ou `union`) combina dois conjuntos em um único conjunto.
-- [`busca`](#operação-busca) (ou `find`) determina a qual conjunto um determinado elemento pertence.
+- `busca` (ou `find`) determina a qual conjunto um determinado elemento pertence.
+- `união` (ou `union`) combina dois conjuntos em um único conjunto.
 
-### Operação União
+## Como implementar um Conjunto Disjunto?
 
-1. Localize o conjunto `X` ao qual o elemento `x` pertence (operação `busca`).
-2. Localize o conjunto `Y` ao qual o elemento `y` pertence (operação `busca`).
-3. Remova todos os elementos de `Y` e coloque os em `X`.
+Um Conjunto Disjunto pode ser implementado de forma eficiente usando uma coleção de árvores (floresta), onde cada árvore representa um conjunto disjunto.
 
-### Operação Busca
+#### Operação Busca
 
-1. Considere inicialmente um conjunto `X` qualquer dentre dos conjuntos disjuntos existentes.
-2. Percorra cada um dos elementos em `X` e verifique se aquele elemento é o elemento buscado.
-3. Em caso afirmativo, retorne o conjunto `X`.
-4. Caso todos os elementos de `X` tenham sido analisados, mas nenhum deles for o elemento buscado, considere um outro conjunto `Y` que ainda não foi analisado, faça `X = Y` e execute novamente os Passos 1 a 4.
-5. Caso o elemento buscado não tenha sido encontrado, retorne `"elemento não encontrado"`.
+```
+Função busca(conjunto, elemento):
+    // Assumir que o elemento é seu próprio representante.
+    representanteEncontrado = elemento
+
+    // Seguir os ponteiros dos nós ancestrais na árvore até chegar à raiz.
+    Enquanto conjunto[representanteEncontrado] != NULO:
+        representanteEncontrado = conjunto[representanteEncontrado]
+
+    // Retornar a raiz encontrada como resultado da busca.
+    Retornar representanteEncontrado
+```
+
+#### Operação União
+
+```
+Função uniao(conjunto, elemento1, elemento2):
+    // Buscar o representante para cada elemento.
+    representante1 = busca(conjunto, elemento1)
+    representante2 = busca(conjunto, elemento2)
+
+    // Verificar se os representantes são diferentes.
+    Se representante1 != representante2:
+        // Fazer um representante apontar para o outro.
+        conjunto[representante1] = representante2
+```
+
+## Como otimizar a implementação de um Conjunto Disjunto?
+
+- **Heurística de União por Tamanho** (_Union-by-Size_ ou _Weighted-Union_). Você pode manter informações sobre o tamanho de cada conjunto. Assim, durante a operação de união, una sempre o conjunto de menor tamanho ao de maior tamanho. Isso ajuda a evitar um desbalanceamento de entre conjuntos e a operação de busca seja mais rápida.
+
+- **Compressão de Caminho** (_Path Compression_). Durante a operação de busca, atualize o pai de cada nó visitado para apontar diretamente para o representante do conjunto. Isso ajuda a reduzir o número de comparações necessárias para determinar o representante de um conjunto em operações futuras de busca.
+
+## Qual o desempenho de um Conjunto Disjunto?
+
+Uma implementação de Conjunto Disjunto usando uma coleção de árvores, heurística de união por tamanho e compressão de caminho possui complexidade de tempo sub-logarítmico para as operações de busca e união, em função do número `n` de elementos na estrutura de dados:
+
+- Operação Busca: `O(log* n)`
+- Operação União: `O(log* n)`
