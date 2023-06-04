@@ -41,7 +41,7 @@ a production environment.
 
 ### Linear Data Structures
 
-- `B` [Vectors](data-structures/vector/README.md)
+- `B` [Vectors](data-structures/vector/)
 - `B` [Linked Lists](data-structures/list/)
 - `B` [Stacks](data-structures/stack/)
 - `B` [Queues](data-structures/queue/)
