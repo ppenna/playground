@@ -70,7 +70,7 @@ a production environment.
 - `B` [Insertion Sort](sorting/insertion-sort/)
 - `B` [Shell Sort](sorting/shell-sort/README.md)
 - `B` [Merge Sort](sorting/merge-sort/)
-- `I` [Quicksort](sorting/quicksort/README.md)
+- `I` [Quicksort](sorting/quicksort/)
 - `I` [Heapsort](sorting/heapsort/)
 - `I` [Counting Sort](sorting/counting-sort/)
 
