@@ -84,7 +84,7 @@ um ambiente de produção não é recomendado.
 ### Strings
 
 - `B` [Algoritmo Força-Bruta](string/search/brute-force/README.pt-br.md)
-- `I` [Algoritmo de Knuth-Morris-Pratt](string/search/kmp/README.pt-br.md)
+- `I` [Algoritmo de Knuth-Morris-Pratt](string/search/kmp/)
 - `I` [Algoritmo de Rabin-Karp](string/search/rabin-karp/README.pt-br.md)
 - `I` [Algoritmo de Boyer-Moore-Horspool](string/search/bmh/)
 - `I` [Maior Subsequência Comum](string/lcs/)

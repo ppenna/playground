@@ -84,7 +84,7 @@ a production environment.
 ### Strings
 
 - `B` [Brute-Force Algorithm](string/search/brute-force/README.md)
-- `I` [Knuth-Morris-Pratt Algorithm](string/search/kmp/README.md)
+- `I` [Knuth-Morris-Pratt Algorithm](string/search/kmp/)
 - `I` [Rabin-Karp Algorithm](string/search/rabin-karp/README.md)
 - `I` [Boyer-Moore-Horspool Algorithm](string/search/bmh/)
 - `I` [Longest Common Subsequence](string/lcs/)
