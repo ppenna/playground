@@ -71,7 +71,7 @@ um ambiente de produção não é recomendado.
 - `B` [Ordenação de Shell (_Shell Sort_)](sorting/shell-sort/README.pt-br.md)
 - `B` [Ordenação por Mesclagem (_Merge Sort_)](sorting/merge-sort/README.pt-br.md)
 - `I` [Quicksort](sorting/quicksort/README.pt-br.md)
-- `I` [Ordenação por Heap (_Heapsort_)](sorting/heapsort/README.pt-br.md)
+- `I` [Ordenação por Heap (_Heapsort_)](sorting/heapsort/)
 - `I` [Ordenação por Contagem (_Counting Sort_)](sorting/bubble-sort/)
 
 ### Busca
