@@ -95,7 +95,7 @@ a production environment.
 - `I` [Breadth-First Search](graph/search/bfs/)
 - `I` [Depth-First Search](graph/search/dfs/)
 - `A` Kruskal's Algorithm
-- `A` [Prim's Algorithm](graph/spanning-tree/prim/README.md)
+- `A` [Prim's Algorithm](graph/spanning-tree/prim/)
 - `A` [Dijkstra's Algorithm](graph/search/dijkstra/)
 - `A` Bellman-Ford's Algorithm
 
