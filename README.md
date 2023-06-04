@@ -46,7 +46,7 @@ a production environment.
 - `B` [Stacks](data-structures/stack/README.md)
 - `B` [Queues](data-structures/queue/README.md)
 - `I` [Binary Heap](data-structures/binary-heap/)
-- `I` [Disjoint Sets](data-structures/disjoint-set/README.md)
+- `I` [Disjoint Sets](data-structures/disjoint-set/)
 
 ### Non-Linear Data Structures
 
