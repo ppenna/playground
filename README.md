@@ -20,6 +20,7 @@ a production environment.
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Data Structures](#data-structures)
   - [Linear Data Structures](#linear-data-structures)
   - [Non-Linear Data Structures](#non-linear-data-structures)
@@ -105,7 +106,7 @@ a production environment.
 
 ### Cryptography
 
-- `B` [Caesar](cryptography/caesar-cipher/README.md)
+- `B` [Caesar](cryptography/caesar-cipher/)
 - `I` DES
 - `A` RSA
 
