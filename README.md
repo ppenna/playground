@@ -83,7 +83,7 @@ a production environment.
 
 ### Strings
 
-- `B` [Brute-Force Algorithm](string/search/brute-force/README.md)
+- `B` [Brute-Force Algorithm](string/search/brute-force/)
 - `I` [Knuth-Morris-Pratt Algorithm](string/search/kmp/)
 - `I` [Rabin-Karp Algorithm](string/search/rabin-karp/)
 - `I` [Boyer-Moore-Horspool Algorithm](string/search/bmh/)
