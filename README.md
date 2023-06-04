@@ -132,5 +132,5 @@ a production environment.
 
 ### Evolutionary Algorithms
 
-- `A` [Genetic Algorithm](evolutionary-algorithms/genetic-algorithm/README.md)
+- `A` [Genetic Algorithm](evolutionary-algorithms/genetic-algorithm/)
 - `A` Particle Swarm Optimization
