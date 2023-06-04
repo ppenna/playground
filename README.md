@@ -43,7 +43,7 @@ a production environment.
 
 - `B` [Vectors](data-structures/vector/README.md)
 - `B` [Linked Lists](data-structures/list/)
-- `B` [Stacks](data-structures/stack/README.md)
+- `B` [Stacks](data-structures/stack/)
 - `B` [Queues](data-structures/queue/)
 - `I` [Binary Heap](data-structures/binary-heap/)
 - `I` [Disjoint Sets](data-structures/disjoint-set/)
