@@ -121,7 +121,7 @@ a production environment.
 
 - `B` [Operations with Matrices](math/matrix/README.md)
 - `B` [Sieve of Eratosthenes](math/sieve-eratosthenes/README.md)
-- `B` [Euclidean Algorithm](math/euclidean-algorithm/README.md)
+- `B` [Euclidean Algorithm](math/euclidean-algorithm/)
 - `I` Gaussian Elimination
 - `A` Discrete Fourier Transform
 
