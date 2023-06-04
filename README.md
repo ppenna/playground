@@ -54,7 +54,7 @@ a production environment.
 - Trees
     - `B` [Binary Search Trees](data-structures/binary-search-tree/)
     - `I` [AVL Trees](data-structures/avl-tree/)
-    - `A` [Red-Black Trees](data-structures/red-black-tree/README.md)
+    - `A` [Red-Black Trees](data-structures/red-black-tree/)
 - `I` [Tries](data-structures/trie/README.md)
 - `I` Graphs
 
