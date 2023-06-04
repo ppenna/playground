@@ -33,7 +33,8 @@ public class MinHeap <E extends Comparable<E>> {
     // Inserts an element and maintains the heap invariant.
     public void insert(E e) {
         // Resizes the array, if it lacks capacity.
-        if (size + 1 == heap.length) resize(size * RESIZING_FACTOR);
+        if (size + 1 == heap.length)
+            resize(size * RESIZING_FACTOR);
 
         // Inserts the element at the end of the heap.
         heap[++size] = e;
@@ -45,7 +46,8 @@ public class MinHeap <E extends Comparable<E>> {
     // Removes the first element of the heap and returns it, maintaining the heap invariant. Resizes the heap if it's sparse.
     public E deleteMin() {
         // Cannot delete from an empty heap.
-        if (isEmpty()) throw new NoSuchElementException();
+        if (isEmpty())
+            throw new NoSuchElementException();
 
         // Stores the element/
         E min = heap[1];
@@ -70,7 +72,8 @@ public class MinHeap <E extends Comparable<E>> {
     // Returns the min element without removing it.
     public E peek() {
         // Cannot peek into an empty heap.
-        if (isEmpty()) throw new NoSuchElementException();
+        if (isEmpty())
+            throw new NoSuchElementException();
 
         return heap[1];
     }
@@ -96,8 +99,10 @@ public class MinHeap <E extends Comparable<E>> {
 
     // Ensures an element is smaller than its children, or it is a leaf.
     private void sink(int index) {
-        for (int child = 2 * index; child <= size; child *= 2) {
+        // Gets the left child of the node.
+        int child = 2 * index;
 
+        while (child <= size) {
             // Gets the smaller of the two children, or the left if they're the same.
             if (child < size && greater(child, child + 1))
                 child++;
@@ -107,7 +112,12 @@ public class MinHeap <E extends Comparable<E>> {
                 break;
 
             swap(index, child);
+
+            // Now the element occupies the child's node in the tree.
             index = child;
+
+            // Updates to the current node's left child.
+            child *= 2;
         }
     }
 
@@ -137,7 +147,6 @@ public class MinHeap <E extends Comparable<E>> {
 
         // Expected: 0 1 2 3 4 5 6 7 8 9.
         for (int i = 0; i < 10; i++)
-            System.out.printf("%d ", minHeap.deleteMin());
-
+            assert minHeap.deleteMin().equals(i);
     }
 }
