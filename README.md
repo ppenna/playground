@@ -78,7 +78,7 @@ a production environment.
 
 - `B` [Linear Search](searching/linear-search/README.md)
 - `B` [Binary Search](searching/binary-search/)
-- `B` [Interpolation Search](searching/interpolation-search/README.md)
+- `B` [Interpolation Search](searching/interpolation-search/)
 - `I` [Exponential Search](searching/exponential-search/)
 
 ### Strings
