@@ -44,7 +44,7 @@ um ambiente de produção não é recomendado.
 - `B` [Vetores](data-structures/vector/README.pt-br.md)
 - `B` [Listas Encadeadas](data-structures/list/)
 - `B` [Pilhas](data-structures/stack/README.pt-br.md)
-- `B` [Filas](data-structures/queue/README.pt-br.md)
+- `B` [Filas](data-structures/queue/)
 - `I` [Heaps Binárias](data-structures/binary-heap/)
 - `I` [Conjuntos Disjuntos](data-structures/disjoint-set/)
 
