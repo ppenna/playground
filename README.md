@@ -93,7 +93,7 @@ a production environment.
 ### Graphs
 
 - `I` [Breadth-First Search](graph/search/bfs/)
-- `I` [Depth-First Search](graph/search/dfs/README.md)
+- `I` [Depth-First Search](graph/search/dfs/)
 - `A` Kruskal's Algorithm
 - `A` [Prim's Algorithm](graph/spanning-tree/prim/README.md)
 - `A` [Dijkstra's Algorithm](graph/search/dijkstra/README.md)
