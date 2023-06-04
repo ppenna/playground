@@ -42,7 +42,7 @@ um ambiente de produção não é recomendado.
 ### Estruturas de Dados Lineares
 
 - `B` [Vetores](data-structures/vector/README.pt-br.md)
-- `B` [Listas Encadeadas](data-structures/list/README.pt-br.md)
+- `B` [Listas Encadeadas](data-structures/list/)
 - `B` [Pilhas](data-structures/stack/README.pt-br.md)
 - `B` [Filas](data-structures/queue/README.pt-br.md)
 - `I` [Heaps Binárias](data-structures/binary-heap/)
