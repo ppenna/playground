@@ -76,7 +76,7 @@ um ambiente de produção não é recomendado.
 
 ### Busca
 
-- `B` [Busca Linear](searching/linear-search/README.pt-br.md)
+- `B` [Busca Linear](searching/linear-search/)
 - `B` [Busca Binária](searching/binary-search/)
 - `B` [Busca por Interpolação](searching/interpolation-search/)
 - `I` [Busca Exponencial](searching/exponential-search/)
