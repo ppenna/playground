@@ -120,7 +120,7 @@ um ambiente de produção não é recomendado.
 ### Matemática
 
 - `B` [Operações em Matrizes](math/matrix/README.pt-br.md)
-- `B` [Crivo de Eratóstenes](math/sieve-eratosthenes/README.pt-br.md)
+- `B` [Crivo de Eratóstenes](math/sieve-eratosthenes/)
 - `B` [Algoritmo de Euclides](math/euclidean-algorithm/)
 - `I` Eliminação Gaussiana
 - `A` Transformada Discreta de Fourier
