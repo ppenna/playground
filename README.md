@@ -88,7 +88,7 @@ a production environment.
 - `I` [Rabin-Karp Algorithm](string/search/rabin-karp/README.md)
 - `I` [Boyer-Moore-Horspool Algorithm](string/search/bmh/README.md)
 - `I` [Longest Common Subsequence](string/lcs/)
-- `I` [Levenshtein's Algorithm](string/levenshtein/README.md)
+- `I` [Levenshtein's Algorithm](string/levenshtein/)
 
 ### Graphs
 
