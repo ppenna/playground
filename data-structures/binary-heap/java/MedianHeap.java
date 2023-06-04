@@ -26,34 +26,20 @@ public class MedianHeap <E extends Comparable<E>> {
             return;
         }
 
-        // If MaxHeap is longer, then we must add to the MinHeap to make them balanced.
-        if (maxHeap.size() > minHeap.size()) {
-            // Add directly to the MinHeap if it belongs in the greater half of the elements.
-            if (e.compareTo(maxHeap.peek()) >= 0) {
-                minHeap.insert(e);
-                return;
-            }
-
-            // It belongs in the lower half, so insert it into the MaxHeap.
+        // If it's greater than the median, store it in the min heap.
+        if (e.compareTo(findTheMedian()) > 0)
+            minHeap.insert(e);
+        // Since it's less than the median, store it in the max heap.
+        else
             maxHeap.insert(e);
 
-            // To keep it balanced, remove from the MaxHeap and insert into the MinHeap.
+        // Maintain the invariants:
+        //  . Both heaps are balanced with each other;
+        //  . MaxHeap may have 1 more element.
+        if (minHeap.size() > maxHeap.size())
+            maxHeap.insert(minHeap.deleteMin());
+        else if (maxHeap.size() > minHeap.size() + 1)
             minHeap.insert(maxHeap.deleteMax());
-            return;
-        }
-
-        // Both heaps have the same size, so we must add to the MaxHeap.
-        // Add directly to the MaxHeap if it belongs in the lower half of the elements.
-        if (e.compareTo(minHeap.peek()) <= 0) {
-            maxHeap.insert(e);
-            return;
-        }
-
-        // It belongs in the upper half, so insert it into the MinHeap.
-        minHeap.insert(e);
-
-        // To keep it balanced, remove from the MinHeap and insert into the MaxHeap.
-        maxHeap.insert(minHeap.deleteMin());
     }
 
     public E findTheMedian() {
@@ -79,8 +65,9 @@ public class MedianHeap <E extends Comparable<E>> {
             medianHeap.insert(i);
 
         // Expected: 4 5 3 6 2 7 1 8 0 9.
-        for (int i = 0; i < 10; i++)
-            System.out.printf("%d ", medianHeap.removeTheMedian());
+        Integer[] expectedOutput = {4, 5, 3, 6, 2, 7, 1, 8, 0, 9};
 
+        for (int i = 0; i < 10; i++)
+            assert medianHeap.removeTheMedian().equals(expectedOutput[i]);
     }
 }
