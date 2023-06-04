@@ -52,7 +52,7 @@ um ambiente de produção não é recomendado.
 
 - `B` Dicionários
 - Árvores
-    - `B` [Árvores Binárias de Busca](data-structures/binary-search-tree/README.pt-br.md)
+    - `B` [Árvores Binárias de Busca](data-structures/binary-search-tree/)
     - `I` [Árvores AVL](data-structures/avl-tree/)
     - `A` [Árvores Vermelha-Preta](data-structures/red-black-tree/README.pt-br.md)
 - `I` [Tries](data-structures/trie/README.pt-br.md)
