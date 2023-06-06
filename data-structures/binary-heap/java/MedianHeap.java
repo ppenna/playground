@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 /**
  * Dynamic median. Design a data type that supports insert in logarithmic time, find-the-median in constant time, and
  * remove-the-median in logarithmic time. If the number of keys in the data type is even, find/remove the lower median.
@@ -6,12 +8,12 @@ public class MedianHeap <E extends Comparable<E>> {
     // The greater half of the elements are stored in a MinHeap. This grants easy access to the upper median.
     // The smaller half of the elements are stored in a MaxHeap. This grants easy access to the lower median.
     // The MaxHeap's size is <= the MinHeap's size -> both the median or the lower median are always in the MaxHeap.
-    private final MinHeap<E> minHeap;
-    private final MaxHeap<E> maxHeap;
+    private final BinaryHeap<E> minHeap;
+    private final BinaryHeap<E> maxHeap;
 
     public MedianHeap() {
-        minHeap = new MinHeap<>();
-        maxHeap = new MaxHeap<>();
+        minHeap = new BinaryHeap<E>(Comparator.reverseOrder());
+        maxHeap = new BinaryHeap<E>(Comparator.naturalOrder());
     }
 
     public void insert(E e) {
@@ -22,7 +24,7 @@ public class MedianHeap <E extends Comparable<E>> {
 
         if (minHeap.isEmpty()) {
             maxHeap.insert(e);
-            minHeap.insert(maxHeap.deleteMax());
+            minHeap.insert(maxHeap.deleteRoot());
             return;
         }
 
@@ -37,9 +39,9 @@ public class MedianHeap <E extends Comparable<E>> {
         //  . Both heaps are balanced with each other;
         //  . MaxHeap may have 1 more element.
         if (minHeap.size() > maxHeap.size())
-            maxHeap.insert(minHeap.deleteMin());
+            maxHeap.insert(minHeap.deleteRoot());
         else if (maxHeap.size() > minHeap.size() + 1)
-            minHeap.insert(maxHeap.deleteMax());
+            minHeap.insert(maxHeap.deleteRoot());
     }
 
     public E findTheMedian() {
@@ -47,11 +49,11 @@ public class MedianHeap <E extends Comparable<E>> {
     }
 
     public E removeTheMedian() {
-        E median = maxHeap.deleteMax();
+        E median = maxHeap.deleteRoot();
 
         // Maintain the invariant: MaxHeap's size >= MinHeap's size.
         if (maxHeap.size() < minHeap.size())
-            maxHeap.insert(minHeap.deleteMin());
+            maxHeap.insert(minHeap.deleteRoot());
 
         return median;
     }

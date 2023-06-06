@@ -10,7 +10,7 @@ SRCDIR = .
 BINDIR = .
 
 # List of Java files to be compiled
-CLASSES = MaxHeap.java MinHeap.java MedianHeap.java
+CLASSES = MaxHeap.java MinHeap.java BinaryHeap.java MedianHeap.java
 
 default: classes
 
@@ -23,6 +23,9 @@ MaxHeap.class: $(SRCDIR)/MaxHeap.java
 # Rule for compiling MinHeap.java
 MinHeap.class: $(SRCDIR)/MinHeap.java
 	$(JC) $(JFLAGS) -d $(BINDIR) $<
+
+# Rule for compiling BinaryHeap.java
+BinaryHeap.class: $(JFLAGS) -d $(BINDIR) $<
 
 # Rule for compiling MedianHeap.java
 MedianHeap.class: $(SRCDIR)/MedianHeap.java
