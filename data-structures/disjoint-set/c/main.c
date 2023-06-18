@@ -8,29 +8,34 @@
 #include <string.h>
 #include <time.h>
 
-// Maximum max_cardinality for a disjoint set.
-#define DSET_MAX_CARDINALITY 1024
+//==============================================================================
+// Disjoint Set
+//==============================================================================
 
 // A disjoint set.
 struct dset {
-    unsigned max_cardinality; // Maximum cardinality.
-    unsigned cardinality;     // Current cardinality.
-    unsigned *sets;           // Sets.
+    unsigned length;    // Number of elements.
+    unsigned *elements; // Elements.
+    unsigned *weights;  // Weight of elements.
 };
 
 // Creates a disjoint set.
-static struct dset *dset_create(unsigned max_cardinality)
+static struct dset *dset_create(unsigned length)
 {
-    struct dset *ds = malloc(sizeof(struct dset));
-    assert(ds != NULL);
+    struct dset *ds = NULL;
 
-    // Initialize data struct.
-    ds->max_cardinality = max_cardinality;
-    ds->cardinality = max_cardinality;
-    ds->sets = malloc(max_cardinality * sizeof(unsigned));
-    assert(ds->sets != NULL);
-    for (unsigned i = 0; i < max_cardinality; i++)
-        ds->sets[i] = (unsigned)i;
+    // Allocate resources.
+    assert((ds = malloc(sizeof(struct dset))) != NULL);
+    assert((ds->elements = malloc(length * sizeof(ds->elements[0]))) != NULL);
+    assert((ds->weights = malloc(length * sizeof(ds->weights[0]))) != NULL);
+
+    // Initialize.
+    ds->length = length;
+    assert(ds->elements != NULL);
+    for (unsigned i = 0; i < length; i++) {
+        ds->elements[i] = i;
+        ds->weights[i] = 1;
+    }
 
     return (ds);
 }
@@ -38,87 +43,100 @@ static struct dset *dset_create(unsigned max_cardinality)
 // Destroys a disjoint set.
 static void dset_destroy(struct dset *ds)
 {
-    // Sanity check.
+    // Sanity check arguments.
     assert(ds != NULL);
 
     // Release resources.
-    free(ds->sets);
+    free(ds->weights);
+    free(ds->elements);
     free(ds);
 }
 
-// Searches a disjoint set for an element.
+// Finds the representative element of a set in a disjoint set.
 static unsigned dset_find(struct dset *ds, unsigned p)
 {
-    unsigned i;
-
-    // Sanity check.
+    // Sanity check arguments.
     assert(ds != NULL);
-    assert(p < ds->max_cardinality);
+    assert(p < ds->length);
 
     // Traverse set.
-    for (i = p; i != ds->sets[i]; i = ds->sets[i])
-        /* noop */;
+    while (p != ds->elements[p]) {
+        // Path compression.
+        ds->elements[p] = ds->elements[ds->elements[p]];
 
-    return (i);
+        // Move to the next element.
+        p = ds->elements[p];
+    }
+
+    return (p);
 }
 
 // Merges two sets of a disjoint set.
 static unsigned dset_union(struct dset *ds, unsigned p, unsigned q)
 {
-    printf("union(%u, %u)\n", p, q);
-    // Sanity check.
+    // Sanity check arguments.
     assert(ds != NULL);
-    assert(p < ds->max_cardinality);
-    assert(q < ds->max_cardinality);
+    assert(p < ds->length);
+    assert(q < ds->length);
 
-    unsigned i = dset_find(ds, p);
-    unsigned j = dset_find(ds, q);
-
-    // Nothing to do.
-    if (i == j)
-        return (-1);
+    // Find representative elements of each set.
+    unsigned p_set = dset_find(ds, p);
+    unsigned q_set = dset_find(ds, q);
 
     // Merge sets.
-    ds->sets[i] = ds->sets[j];
-    ds->cardinality -= 1;
+    if (p_set != q_set) {
+        // Weighted-union heuristic: link the representative element of the
+        // smaller set  to the representative element of the larger set.
+        if (ds->weights[p_set] > ds->weights[q_set]) {
+            unsigned tmp = p_set;
+            p_set = q_set;
+            q_set = tmp;
+        }
+        ds->elements[p_set] = q_set;
+        ds->weights[q_set] += ds->weights[p_set];
+    }
 
-    return (ds->sets[i]);
+    return (q_set);
 }
 
 // Prints the contents of a disjoint set.
 static void dset_print(const struct dset *ds)
 {
-    printf("disjoin-set { ");
-    printf("max_cardinality: %u, ", ds->max_cardinality);
-    printf("cardinality: %u, ", ds->cardinality);
+    printf("dset { ");
     printf("elements: [");
-    printf("elements: [");
-    for (size_t i = 0; i < ds->max_cardinality; i++) {
-        printf(
-            "%d%s", ds->sets[i], ((i + 1) == ds->max_cardinality) ? "" : ", ");
+    for (unsigned i = 0; i < ds->length; i++) {
+        printf("%d%s", ds->elements[i], ((i + 1) == ds->length) ? "" : ", ");
+    }
+    printf("], ");
+    printf("weights: [");
+    for (unsigned i = 0; i < ds->length; i++) {
+        printf("%d%s", ds->weights[i], ((i + 1) == ds->length) ? "" : ", ");
     }
     printf("] }\n");
 }
 
-// Tests a disjoint set.
-static void test(unsigned max_cardinality, bool verbose)
+//==============================================================================
+// Test
+//==============================================================================
+
+// Drives tests on a disjoint set.
+static void test(unsigned length, bool verbose)
 {
     double tstart = 0.0;
     double tend = 0.0;
     const double MICROSECS = ((CLOCKS_PER_SEC / 1000000.0));
-    struct dset *ds = dset_create(max_cardinality);
+    struct dset *ds = NULL;
 
+    // Create disjoint set.
+    ds = dset_create(length);
     if (verbose) {
         dset_print(ds);
     }
 
     // Merge even sets.
     tstart = clock();
-    for (unsigned i = 2; i < max_cardinality; i += 2) {
-        dset_union(ds, i, 0);
-        if (verbose) {
-            dset_print(ds);
-        }
+    for (unsigned i = 2; i < length; i += 2) {
+        dset_union(ds, 0, i);
     }
     tend = clock();
     if (verbose) {
@@ -126,22 +144,64 @@ static void test(unsigned max_cardinality, bool verbose)
     }
     printf("%12s: %2.lf us\n", "dset_union()", (tend - tstart) / MICROSECS);
 
+    // Sanity check result.
+    for (unsigned i = 0; i < length; i += 2) {
+        assert(dset_find(ds, 0) == dset_find(ds, i));
+    }
+
+    // Merge odd sets.
+    tstart = clock();
+    for (unsigned i = 1; i < length; i += 2) {
+        dset_union(ds, 1, i);
+    }
+    tend = clock();
+    if (verbose) {
+        dset_print(ds);
+    }
+    printf("%12s: %2.lf us\n", "dset_union()", (tend - tstart) / MICROSECS);
+
+    // Sanity check result.
+    for (unsigned i = 1; i < length; i += 2) {
+        assert(dset_find(ds, 1) == dset_find(ds, i));
+    }
+
+    // Merge even and odd set.
+    tstart = clock();
+    dset_union(ds, 0, 1);
+    tend = clock();
+    if (verbose) {
+        dset_print(ds);
+    }
+
+    // Sanity check result.
+    for (unsigned i = 0; i < length; i++) {
+        assert(dset_find(ds, 0) == dset_find(ds, i));
+    }
+
     // Release disjoint set.
     dset_destroy(ds);
 }
+
+//==============================================================================
+// Usage
+//==============================================================================
 
 // Prints program usage and exits.
 static void usage(char *const argv[])
 {
     printf("%s - Testing program for disjoint sets.\n", argv[0]);
-    printf("Usage: %s [--verbose] <maximum cardinality>\n", argv[0]);
+    printf("Usage: %s [--verbose] <length>\n", argv[0]);
     exit(EXIT_FAILURE);
 }
 
-// Drives the test function.
+//==============================================================================
+// Main
+//==============================================================================
+
+// Test program.
 int main(int argc, char *const argv[])
 {
-    unsigned max_cardinality = 0;
+    unsigned length = 0;
     bool verbose = false;
 
     // Check for missing arguments.
@@ -152,17 +212,17 @@ int main(int argc, char *const argv[])
 
     // Parse command line arguments.
     if (argc == 2) {
-        sscanf(argv[1], "%u", &max_cardinality);
+        sscanf(argv[1], "%u", &length);
     } else if ((argc == 3) && (!strcmp(argv[1], "--verbose"))) {
-        sscanf(argv[2], "%u", &max_cardinality);
+        sscanf(argv[2], "%u", &length);
         verbose = true;
     } else {
-        printf("Error: invalid arguments.\n");
+        printf("Error: invalid argument.\n");
         usage(argv);
     }
 
     // Run it!
-    test(max_cardinality, verbose);
+    test(length, verbose);
 
     return (EXIT_SUCCESS);
 }

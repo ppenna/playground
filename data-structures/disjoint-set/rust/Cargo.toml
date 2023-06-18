@@ -1,0 +1,9 @@
+# Copyright (C) 2023 Pedro Henrique Penna <pedrohenriquepenna@outlook.com>
+
+[package]
+name = "disjoint-set"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.68"
