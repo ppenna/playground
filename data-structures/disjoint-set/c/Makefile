@@ -10,7 +10,7 @@ SRC = $(wildcard *.c)
 EXEC = dset.elf
 
 # Default Run Arguments
-ARGS ?= "1024"
+ARGS ?= --verbose 8
 
 #===============================================================================
 # Compiler Configuration
