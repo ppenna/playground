@@ -1,15 +1,17 @@
-import java.util.ArrayList;
-import java.util.List;
+package union_find;
 
 public class UnionFind {
     // Array indicating the root of the component each element is connected to.
-    protected int[] id;
+    private int[] id;
     // The index of the root of the component indicates the whole component's size.
-    protected int[] size;
+    private int[] size;
+    // Auxiliary array for path compression.
+    private int[] toCompress;
 
     public UnionFind(int n) {
         id = new int[n];
         size = new int[n];
+        toCompress = new int[n];
         // Initialize every element to be the root of its own component,
         // and the size of each component to 1.
         for (int i = 0; i < n; i++) {
@@ -44,20 +46,21 @@ public class UnionFind {
 
     // Finds the root of the component to which an element is connected.
     public int find(int p) {
-        // Create a resizing array to compress the path of all elements along the way.
-        List<Integer> compressionList = new ArrayList<>();
+        // Count the number of iterations.
+        int i = 0;
+
         // While the element is not the root of the component:
         while (p != id[p]) {
             // Remember the element.
-            compressionList.add(p);
+            toCompress[i++] = p;
             // Get the element's parent.
             p = id[p];
         }
 
         // Now make all elements traversed point directly to the root.
         // Next time "find" is called, it will only take 1 iteration of the loop to find the root.
-        for (Integer e : compressionList)
-            id[e] = p;
+        for (int j = 0; j < i; j++)
+            id[j] = p;
 
         // Return the root.
         return p;
