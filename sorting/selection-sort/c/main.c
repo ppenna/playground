@@ -23,7 +23,7 @@ static void swap(type_t *x, type_t *y)
 static void selection_sort(type_t array[], size_t length)
 {
     // Sorts the input array.
-    for (size_t i = 0; i < length; i++) {
+    for (size_t i = 0; i < (length - 1); i++) {
         size_t smallest = i;
 
         // Find smallest element in the un-sorted sub-array.
