@@ -26,7 +26,7 @@ static void selection_sort(type_t array[], size_t length)
     for (size_t i = 0; i < (length - 1); i++) {
         size_t smallest = i;
 
-        // Find smallest element in the un-sorted sub-array.
+        // Find smallest element in the unsorted subarray.
         for (size_t j = i + 1; j < length; j++) {
             // Found.
             if (array[j] < array[smallest]) {
